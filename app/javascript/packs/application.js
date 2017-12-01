@@ -6,7 +6,7 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-console.log("sono l'application.js!")
+console.log('Hello World from Webpacker!')
 //import {} from 'jquery'
 //import {} from 'jquery-ujs'
 //inizializzo jquery
@@ -18,4 +18,4 @@ import Rails from 'rails-ujs'
 Rails.start()
 
 
-console.log('Hello World from Webpacker!')
+
