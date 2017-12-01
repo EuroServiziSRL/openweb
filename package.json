@@ -1,5 +1,14 @@
 {
   "name": "openweb",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "coffeescript": "1.12.7",
+    "jquery": "^3.2.1",
+    "jquery-ujs": "^1.2.2",
+    "rails-ujs": "^5.1.4"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.5"
+  }
 }

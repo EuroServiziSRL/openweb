@@ -24,3 +24,6 @@
 
 # Ignoro la cartella degli engines
 /engines
+/public/packs
+/public/packs-test
+/node_modules
