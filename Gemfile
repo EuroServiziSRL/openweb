@@ -53,6 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+gem 'multiverse'   #permette di usare n database
+gem 'rmre'         #crea i models partendo da un database 
 gem 'jquery-rails' #jquery e Unobtrusive scripting adapter
 gem 'webpacker'
 gem 'auth_hub', path: 'engines/auth_hub'
