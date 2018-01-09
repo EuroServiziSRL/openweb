@@ -18,4 +18,13 @@ import Rails from 'rails-ujs'
 Rails.start()
 
 
-console.log('Hello World from Webpacker!')
+console.log('Hello World from Webpacker! Ready for React!');
+
+import React from 'react';
+import { render } from 'react-dom';
+import SampleComponent from '../components/SampleComponent';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.body.appendChild(document.createElement('div'));
+  render(<SampleComponent/>, container);
+});
