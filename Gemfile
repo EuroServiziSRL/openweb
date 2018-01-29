@@ -56,3 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails' #jquery e Unobtrusive scripting adapter
 gem 'webpacker'
 gem 'auth_hub', path: 'engines/auth_hub'
+gem 'font-awesome-sass'
+gem 'font-ionicons-rails'
+gem 'material_design_icons_rails'
+#gem 'weather-icons-for-rails'
+gem 'bootstrap-sass'

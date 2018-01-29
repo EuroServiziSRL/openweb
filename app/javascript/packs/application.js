@@ -24,7 +24,12 @@ import React from 'react';
 import { render } from 'react-dom';
 import SampleComponent from '../components/SampleComponent';
 
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(function(){
+  const container = $("<div>");
+  $("body").append(container);
+  render(<SampleComponent/>, container[0]);
+});
+/*document.addEventListener('DOMContentLoaded', () => {
   const container = document.body.appendChild(document.createElement('div'));
   render(<SampleComponent/>, container);
-});
+});*/

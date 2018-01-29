@@ -8,13 +8,20 @@
    
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'hello_react' %>
-    
-  
-    
+    <%= javascript_pack_tag 'bootstrap' %>
+    <%= javascript_pack_tag 'detect' %>
+    <%= javascript_pack_tag 'fastclick' %>
+    <%-# javascript_pack_tag 'jquery.slimscroll' -%>
+    <%-# javascript_pack_tag 'jquery.blockUI' -%>
+    <%-# javascript_pack_tag 'waves' -%>
+    <%= javascript_pack_tag 'wow' %>
+    <%-# javascript_pack_tag 'jquery.nicescroll' -%>
+    <%-# javascript_pack_tag 'jquery.scrollTo.min' -%>
+    <%-# javascript_pack_tag 'jquery.core' -%>
+      
   </head>
 
-  <body>
-    Suite Openweb
+  <body class="fixed-left widescreen">
     <%= yield %>
   </body>
 </html>
