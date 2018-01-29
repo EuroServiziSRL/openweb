@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-gem 'mysql2'
+gem 'mysql2', '0.4.10'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -53,6 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+gem 'multiverse'   #permette di usare n database
+gem 'rmre'         #crea i models partendo da un database 
 gem 'jquery-rails' #jquery e Unobtrusive scripting adapter
 gem 'webpacker'
 gem 'auth_hub', path: 'engines/auth_hub'
@@ -61,3 +63,5 @@ gem 'font-ionicons-rails'
 gem 'material_design_icons_rails'
 #gem 'weather-icons-for-rails'
 gem 'bootstrap-sass'
+gem 'cancancan', '~> 2.1'
+gem 'rails_admin', '~> 1.2'

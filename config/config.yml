@@ -1,0 +1,14 @@
+# config/config.yml
+#per usare le conf: url = APP_CONFIG['api_url']
+
+
+test:
+  logout_azure: false
+
+
+development:
+  logout_azure: false
+
+production:
+  logout_azure: false
+
