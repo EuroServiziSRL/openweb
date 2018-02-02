@@ -28,7 +28,7 @@ import SampleComponent from '../components/SampleComponent';
 
 // carico tutti i js installati via yarn
 
-// import {} from 'detect/bin/detect' // va in errore alla compilazione
+import {} from 'detect/lib/tree-walk' // va in errore alla compilazione
 // import {} from 'modernizr' // va in errore alla compilazione
 
 import {} from 'fastclick'
