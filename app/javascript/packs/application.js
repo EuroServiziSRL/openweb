@@ -28,23 +28,23 @@ import SampleComponent from '../components/SampleComponent';
 
 // carico tutti i js installati via yarn
 
-import {} from 'detect/lib/tree-walk' // va in errore alla compilazione
 // import {} from 'modernizr' // va in errore alla compilazione
 
-import {} from 'fastclick'
-import {} from 'jquery-slimscroll'
-import {} from 'wowjs'
-import {} from 'jquery.nicescroll'
-import {} from 'jquery.scrollto'
-import {} from 'switchery'
-import {} from 'jquery-circliful'
-import {} from 'jquery-sparkline'
+// import {} from 'fastclick'
+// import {} from 'jquery-slimscroll'
+// import {} from 'wowjs'
+// import {} from 'jquery.nicescroll'
+// import {} from 'jquery.scrollto'
+// import {} from 'switchery'
+// import {} from 'jquery-circliful'
+// import {} from 'jquery-sparkline'
 
-import {} from 'counterup/jquery.counterup'
-import {} from 'jquery-waypoints/waypoints'
-import {} from 'jquery-dashboard/dist/jquery.dashboard.core'
-import {} from 'jquery-dashboard/dist/jquery.dashboard.jqueryui'
-import {} from 'waves/dist/waves'
+// import {} from 'detect/lib/tree-walk'
+// import {} from 'counterup/jquery.counterup'
+// import {} from 'jquery-waypoints/waypoints'
+// import {} from 'jquery-dashboard/dist/jquery.dashboard.core'
+// import {} from 'jquery-dashboard/dist/jquery.dashboard.jqueryui'
+// import {} from 'waves/dist/waves'
 
 var resizefunc = [];
 $(document).ready(function() {
