@@ -6,6 +6,9 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+
+
+
 console.log('Hello World from Webpacker!')
 //import {} from 'jquery'
 //import {} from 'jquery-ujs'
@@ -23,8 +26,53 @@ import React from 'react';
 import { render } from 'react-dom';
 import SampleComponent from '../components/SampleComponent';
 
-$(document).ready(function(){
+// carico tutti i js installati via yarn
+
+// import {} from 'detect/bin/detect' // va in errore alla compilazione
+// import {} from 'modernizr' // va in errore alla compilazione
+
+import {} from 'fastclick'
+import {} from 'jquery-slimscroll'
+import {} from 'wowjs'
+import {} from 'jquery.nicescroll'
+import {} from 'jquery.scrollto'
+import {} from 'switchery'
+import {} from 'jquery-circliful'
+import {} from 'jquery-sparkline'
+
+import {} from 'counterup/jquery.counterup'
+import {} from 'jquery-waypoints/waypoints'
+import {} from 'jquery-dashboard/dist/jquery.dashboard.core'
+import {} from 'jquery-dashboard/dist/jquery.dashboard.jqueryui'
+import {} from 'waves/dist/waves'
+
+var resizefunc = [];
+$(document).ready(function() {
   const container = $("<div>");
   $("body").append(container);
   render(<SampleComponent/>, container[0]);
+  
+  $('.counter').counterUp({
+      delay: 100,
+      time: 1200
+  });
+  $('.circliful-chart').circliful();
 });
+
+// BEGIN SVG WEATHER ICON
+if (typeof Skycons !== 'undefined'){
+var icons = new Skycons(
+    {"color": "#3bafda"},
+    {"resizeClear": true}
+    ),
+	list  = [
+	    "clear-day", "clear-night", "partly-cloudy-day",
+	    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+	    "fog"
+	],
+	i;
+
+    for(i = list.length; i--; )
+    icons.set(list[i], list[i]);
+    icons.play();
+};
