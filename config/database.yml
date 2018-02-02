@@ -3,8 +3,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   encoding: utf8
-  username: root
-  password: breclidr
+  username: fabianopavan
+  password: c90p3nw3b
   host: 127.0.0.1
   port: 3306
 
