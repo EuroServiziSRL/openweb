@@ -49,7 +49,7 @@ import SampleComponent from '../components/SampleComponent';
 var resizefunc = [];
 $(document).ready(function() {
   const container = $("<div>");
-  $("body").append(container);
+  $(".card-box").append(container);
   render(<SampleComponent/>, container[0]);
   
   $('.counter').counterUp({
