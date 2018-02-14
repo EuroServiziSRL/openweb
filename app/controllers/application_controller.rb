@@ -8,5 +8,11 @@ class ApplicationController < ActionController::Base
     
     end
     
+    def error_dati
+        
+    
+    end
+    
+    
     
 end
