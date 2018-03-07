@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   
   get "/test/:page" => "test#show"
   
-  get 'error_dati' => "application#error_dati", :as => :error_dati
+  get 'cambia_ente' => "application#cambia_ente", :as => :cambia_ente
+  get 'error_dati' => "suite#error_dati", :as => :error_dati
   
   root to: "suite#index"
 

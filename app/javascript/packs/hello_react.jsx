@@ -18,9 +18,12 @@ Hello.propTypes = {
   name: PropTypes.string
 }
 
+/* Nascondo test
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Hello name="React" />,
     document.body.appendChild(document.createElement('div')),
   )
 })
+
+*/

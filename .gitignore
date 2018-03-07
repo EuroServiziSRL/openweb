@@ -24,9 +24,12 @@
 
 # Ignoro la cartella degli engines
 /engines
+
+
+# Cartelle per file compilati
 /public/packs
 /public/packs-test
-/node_modules
+/public/assets
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key

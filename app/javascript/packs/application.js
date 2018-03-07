@@ -48,6 +48,8 @@ import SampleComponent from '../components/SampleComponent';
 
 var resizefunc = [];
 $(document).ready(function() {
+  
+  /* Nascondo barra caricatore
   const container = $("<div>");
   $(".card-box").append(container);
   render(<SampleComponent/>, container[0]);
@@ -57,6 +59,10 @@ $(document).ready(function() {
       time: 1200
   });
   $('.circliful-chart').circliful();
+  */
+  
+  
+  
 });
 
 // BEGIN SVG WEATHER ICON

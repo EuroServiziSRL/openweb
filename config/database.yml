@@ -61,4 +61,5 @@ clienti_test:
 
 clienti_production:
   <<: *clienti
-  url: <%= ENV['CLIENTI_DATABASE_URL'] %>
+  #url: <%= ENV['CLIENTI_DATABASE_URL'] %>
+  database: clienti_development

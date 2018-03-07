@@ -4,7 +4,7 @@
     <title>Openweb</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Questo partial include i css degli engine -->
     
     <%= render "shared/auth_hub/header_engine" %>
@@ -46,25 +46,25 @@
 	  
 	  <div id="contentColumn" class="col-lg-12 col-md-12">
 	    <div class="card-box">
-    
+   
 	      <div id="user-info">
-		<% if user_signed_in? %>
-		  Ciao <%= current_user.nome_cognome %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete  %> | 
-		  <%= form_tag(cambia_ente_path, class: 'form-inline') do %> <% unless @array_enti_gestiti.blank? %> <%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale)) %><% end %><% end %>
-		<% else %>
-		  <%= link_to "Sign in with Azure", auth_hub.user_omniauth_azure_oauth2_authorize_path(provider: "azure_oauth2") %>
-		<% end %>
+					<% if user_signed_in? %>
+					  Ciao <%= current_user.nome_cognome %> | <%= link_to 'Sign out', AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %> | 
+					  <%= form_tag(cambia_ente_path, class: 'form-inline') do %> <% unless @array_enti_gestiti.blank? %> <%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale)) %><% end %><% end %>
+					<% else %>
+					  <%= link_to "Sign in with Azure", auth_hub.user_omniauth_azure_oauth2_authorize_path(provider: "azure_oauth2") %>
+					<% end %>
 	      </div>
 	      
 	      <% if !notice.blank? || !alert.blank? %>
-		<div id="notify">
-		    <% unless notice.blank?  %>
-		      <p class="notice"><%= notice %></p>
-		    <% end  %>
-		    <% unless alert.blank?  %>
-		      <p class="alert"><%= alert %></p>
-		    <% end  %>
-		</div>
+					<div id="notify">
+					    <% unless notice.blank?  %>
+					      <p class="notice"><%= notice %></p>
+					    <% end  %>
+					    <% unless alert.blank?  %>
+					      <p class="alert"><%= alert %></p>
+					    <% end  %>
+					</div>
 	      <% end  %>
 	    
 	      
