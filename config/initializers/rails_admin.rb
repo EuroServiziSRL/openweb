@@ -2,6 +2,8 @@ module RailsAdmin
     module Extensions
         module CanCanCan2
             class AuthorizationAdapter < RailsAdmin::Extensions::CanCanCan::AuthorizationAdapter
+                #In questi metodi posso abilitare o no i modelli che si possono usare
+                
                 def authorize(action, abstract_model = nil, model_object = nil)
                     return unless action
                     reaction, subject = fetch_action_and_subject(action, abstract_model, model_object)
