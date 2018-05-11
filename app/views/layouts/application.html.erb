@@ -10,37 +10,66 @@
     <%= render "shared/auth_hub/header_engine" %>
     
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'filterrific-jquery' %>
     <%-#  javascript_pack_tag 'hello_react' -%>
+    
+    <!-- TODO: installare tramite yarn? -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       
   </head>
   <body class="fixed-left widescreen">
   
     <header id="topnav" class="tagline"> 
       <div class="container topbar-main"> 
-				<div class="pull-left"> 
-				  <div class="logo">
-				    <a class="logo" href="/openweb/messi/iniziale.php"></a>
-				  </div>
-				  <span>Layout Application</span>
-				</div>
-				<div class="pull-right">
-					<% if user_signed_in? %>
-					  Ciao <%= current_user.nome_cognome %> | <%= link_to 'Sign out', AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %> | 
-					  <%= form_tag(cambia_ente_path, class: 'form-inline') do %> 
-					  	<% unless @array_enti_gestiti.blank? %> <%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale)) %><% end %>
-					  <% end %>
-					<% end %>
-				</div>
-				<div class="clear"></div>
-      </div>
-      
-      <div class="navbar navbar-custom sticky" role="navigation">
-				<div class="container">
-				  <div class="navigation">
-				    <ul class="navigation-menu">
-				    </ul>
-				  </div>
-				</div>
+	<div class="logo">
+	  <a class="logo" href="/auth_hub/dashboard"></a>
+	</div>
+	<span>Dashboard</span>
+	
+	<div class="menu-extras">
+	  <ul class="nav navbar-nav navbar-right pull-right">
+	    
+	    <% if user_signed_in? %>
+	      <li>
+		<%= form_tag(cambia_ente_path, class: 'form-inline') do %> 
+		      <% unless @array_enti_gestiti.blank? %> <%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale)) %><% end %>
+		<% end %>
+	      </li>
+	      <li class="dropdown">
+		<a data-toggle="dropdown" class="dropdown-toggle">
+		  <i class="fa fa-user"></i>
+		  Ciao <%= current_user.nome_cognome %>
+		</a>
+
+		<ul class="dropdown-menu">
+		  <li><%= link_to '<i class="fa fa-power-off"></i> Sign out', AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %></li>
+		</ul>
+	      </li>
+	    <% end %>
+	  </ul>
+
+	  <div class="menu-item">
+	    <!-- Mobile menu toggle-->
+	    <a class="navbar-toggle">
+	      <div class="lines">
+		<span></span>
+		<span></span>
+		<span></span>
+	      </div>
+	    </a>
+	    <!-- End mobile menu toggle-->
+	    </div>
+	  </div>
+	<div class="clear"></div>
+</div>
+
+<div class="navbar navbar-custom sticky" role="navigation">
+	<div class="container">
+	  <div class="navigation">
+	    <ul class="navigation-menu">
+	    </ul>
+	  </div>
+	</div>
       </div>
     </header>
     
