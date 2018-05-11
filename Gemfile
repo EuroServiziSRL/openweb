@@ -73,3 +73,4 @@ gem 'material_design_icons_rails'
 
 gem 'cancancan', '~> 2.1'
 gem 'rails_admin', '~> 1.2'
+gem 'filterrific'

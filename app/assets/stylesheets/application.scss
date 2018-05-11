@@ -14,27 +14,18 @@
 .navbar.navbar-custom {
   min-height: 30px;
   border: 0px;
-}
-
-.navbar-custom {
-    padding: 0;
-}
-.navbar-custom {
-    margin-bottom: 0;
-    padding: 10px 0;
-    transition: background-color 1s ease-in-out 0s, border 1s ease-in-out 0s;
-}
-.navbar-custom {
-    background-color: #ffffff;
-    border-radius: 0;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    z-index: 999;
+  padding: 0;
+  margin-bottom: 0;
+  padding: 10px 0;
+  transition: background-color 1s ease-in-out 0s, border 1s ease-in-out 0s;
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 999;
 }
 .navbar-nav > li > a {
     padding: 5px 20px;
-}
-.navbar-nav > li > a {
     color: #000000;
 }
 .nav > li > a:focus, .nav > li > a:hover {
@@ -69,7 +60,7 @@ footer {
     background-color: #3bafda;
     
     a.logo {
-      background-image: url("../images/civilianext.png");
+      background-image: image_url('civilianext.png');
       height: 12px;
       margin-bottom: 2px;
       margin-top: 2px;
@@ -161,7 +152,6 @@ footer {
 }
 
 .wrapper {    
-  
   margin-top: 72px;
   min-height: 79.5vh;
 }
@@ -170,7 +160,7 @@ footer {
   width: 100%;
 }
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+div[class*="col-"] {
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -206,15 +196,19 @@ label {
     margin-right: -5px;
 }
 
-.btn-primary {
-    border-bottom-color: #2494be !important;
-}
-.btn-default {
-    border-bottom-color: #a4b6bf !important;
-}
-.btn, .btn:hover, .btn:active, .btn:focus {
+.btn {
+  &, &:hover, &:active, &:focus {
     border-bottom-style: solid !important;
     border-bottom-width: 2px !important;
+  }
+  
+  &-default {
+    border-bottom-color: #a4b6bf !important;
+  }
+  
+  &-primary {
+    border-bottom-color: #2494be !important;
+  }
 }
 .no-radius {
     border-radius: 0 !important;
