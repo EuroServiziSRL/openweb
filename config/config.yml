@@ -2,13 +2,15 @@
 #per usare le conf: url = APP_CONFIG['api_url']
 
 
+
 test:
   logout_azure: false
-
+  url_dominio: ""
 
 development:
   logout_azure: false
-
+  url_dominio: ""
+  
 production:
   logout_azure: false
-
+  url_dominio: ""
