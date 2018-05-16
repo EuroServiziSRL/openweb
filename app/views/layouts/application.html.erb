@@ -38,11 +38,16 @@
 	      <li class="dropdown">
 		<a data-toggle="dropdown" class="dropdown-toggle">
 		  <i class="fa fa-user"></i>
-		  Ciao <%= current_user.nome_cognome %>
+		  <%= current_user.nome_cognome %>
 		</a>
 
 		<ul class="dropdown-menu">
-		  <li><%= link_to '<i class="fa fa-power-off"></i> Sign out', AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %></li>
+		  <li>
+		    <%= link_to '<i class="fa fa-users"></i> Users'.html_safe  %>
+		  </li>
+		  <li>
+		    <%= link_to '<i class="fa fa-power-off"></i> Sign out'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
+		  </li>
 		</ul>
 	      </li>
 	    <% end %>
@@ -80,7 +85,6 @@
 	<div class="row">
 	  
 	  <div id="contentColumn" class="col-lg-12 col-md-12">
-	    <div class="card-box">
    
 	      
 	      <!-- gestiti a livello di view interna -->
@@ -99,7 +103,6 @@
 	      
 	      <%= yield %>
 	      
-	    </div>
 	  </div>
 	  
 	</div>			
