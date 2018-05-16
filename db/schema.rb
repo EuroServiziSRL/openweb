@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313104839) do
+ActiveRecord::Schema.define(version: 20180516115535) do
 
   create_table "auth_hub_applicazioni_ente", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "ente_gestito_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180313104839) do
     t.string "uid"
     t.text "jwt"
     t.datetime "jwt_created"
+    t.string "stato"
     t.index ["email"], name: "index_auth_hub_users_on_email", unique: true
     t.index ["password_changed_at"], name: "index_auth_hub_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_auth_hub_users_on_reset_password_token", unique: true
