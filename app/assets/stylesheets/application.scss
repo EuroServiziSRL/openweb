@@ -16,6 +16,12 @@ $fa-font-path: "font-awesome/fonts";
 
 body {
   font-size: 12px;
+  background: none repeat scroll 0 0 #f5f5f5;
+  color: #4c5667;
+  font-family: "Noto Sans",sans-serif;
+  margin: 0;
+  overflow-x: hidden !important;
+  padding-bottom: 61px;
 }
 
 .navbar.navbar-custom {
@@ -167,6 +173,15 @@ footer {
   }
 }
 
+.panel-body {
+    padding: 15px !important;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .wrapper {    
   margin-top: 72px;
   min-height: 79.5vh;
@@ -190,6 +205,39 @@ div[class*="col-"] {
     background-color: #fff;
     box-shadow: none;
     border: 1px solid #eeeeee;
+}
+
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+.panel-heading {
+    border-bottom: 1px solid transparent !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 15px;
+}
+
+.panel-default > .panel-heading {
+    background-color: #f5f5f5;
+    border-color: #ddd !important;
+    color: #333;
+}
+.table thead th {
+    background-color: #62a8d1;
+    color: #fff;
+}
+.table th, .table th a {
+    color: #fff;
+    line-height: 16px;
+    padding: 0.3em;
 }
 
 label, label.control-label {
@@ -360,4 +408,42 @@ ol, ul {
 
 .btn-app.btn-warning, .btn-app.btn-warning.no-hover:hover, .btn-app.btn-warning.disabled:hover {
   background: linear-gradient(to bottom, #ffbf66 0%, #ffa830 100%) repeat-x scroll 0 0 #ffb44b !important;
+}
+
+.btn-app.btn-info:hover {
+    background: linear-gradient(to bottom, #4a9ede 0%, #348dc9 100%) repeat-x scroll 0 0 #3f96d4 !important;
+}
+.btn, .btn:hover, .btn:active, .btn:focus {
+    border-bottom-style: solid !important;
+    border-bottom-width: 2px !important;
+}
+.btn-app.btn-info, .btn-app.btn-info.no-hover:hover, .btn-app.btn-info.disabled:hover {
+    background: linear-gradient(to bottom, #75b5e6 0%, #5ba4d5 100%) repeat-x scroll 0 0 #68adde !important;
+}
+.btn-app:hover, .btn-app.btn-default:hover {
+    background: linear-gradient(to bottom, #a3b5c5 0%, #93a6b2 100%) repeat-x scroll 0 0 #9baebc !important;
+}
+
+.btn-app.btn-success:hover {
+    background: linear-gradient(to bottom, #74a844 0%, #648740 100%) repeat-x scroll 0 0 #6c9842 !important;
+}
+
+.btn-app.btn-purple:hover {
+    background: linear-gradient(to bottom, #8973be 0%, #6d5ca1 100%) repeat-x scroll 0 0 #7b68af !important;
+}
+
+.btn-app.btn-danger:hover {
+    background: linear-gradient(to bottom, #c43a30 0%, #a51f1c 100%) repeat-x scroll 0 0 #b52c26 !important;
+}
+
+.btn-app.btn-pink:hover {
+    background: linear-gradient(to bottom, #d2346e 0%, #aa2a59 100%) repeat-x scroll 0 0 #be2f64 !important;
+}
+
+.btn-app.btn-primary:hover {
+    background: linear-gradient(to bottom, #267eb8 0%, #136194 100%) repeat-x scroll 0 0 #1d6fa6 !important;
+}
+
+.btn-app.btn-warning:hover {
+    background: linear-gradient(to bottom, #ffaa33 0%, #fc9200 100%) repeat-x scroll 0 0 #fe9e19 !important;
 }
