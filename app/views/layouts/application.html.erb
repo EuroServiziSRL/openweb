@@ -21,8 +21,11 @@
   
     <header id="topnav" class="tagline"> 
       <div class="container topbar-main"> 
-	<div class="logo">
+	<!--<div class="logo">
 	  <a class="logo" href="/auth_hub/dashboard"></a>
+	</div>-->
+	<div class="logo">
+	  <span>OPENWEB</span>
 	</div>
 	<span>Dashboard</span>
 	
@@ -43,10 +46,10 @@
 
 		<ul class="dropdown-menu">
 		  <li>
-		    <%= link_to '<i class="fa fa-users"></i> Users'.html_safe  %>
+		    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
 		  </li>
 		  <li>
-		    <%= link_to '<i class="fa fa-power-off"></i> Sign out'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
+		    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 		  </li>
 		</ul>
 	      </li>
