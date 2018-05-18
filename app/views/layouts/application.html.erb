@@ -27,7 +27,7 @@
 	<div class="logo">
 	  <span>OPENWEB</span>
 	</div>
-	<span>Dashboard</span>
+	<span>Dashboard <%= @tipo_amministratore.blank? ? '' : @tipo_amministratore %></span>
 	
 	<div class="menu-extras">
 	  <ul class="nav navbar-nav navbar-right pull-right">
@@ -45,9 +45,11 @@
 		</a>
 
 		<ul class="dropdown-menu">
+		  <% if current_user.superadmin_role %>
 		  <li>
 		    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
 		  </li>
+		  <% end %>
 		  <li>
 		    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 		  </li>
