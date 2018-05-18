@@ -27,7 +27,7 @@
 	<div class="logo">
 	  <span>OPENWEB</span>
 	</div>
-	<span>Dashboard <%= current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></span>
+	<span>Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></span>
 	
 	<div class="menu-extras">
 	  <ul class="nav navbar-nav navbar-right pull-right">
@@ -50,6 +50,9 @@
 		    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
 		  </li>
 		  <% end %>
+		  <li>
+		    <%= link_to '<i class="fa fa-users"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
+		  </li>
 		  <li>
 		    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 		  </li>
