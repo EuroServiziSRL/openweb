@@ -27,7 +27,12 @@
 	<div class="logo">
 	  <span>OPENWEB</span>
 	</div>
-	<span>Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></span>
+	
+	<span>
+		<% if user_signed_in? %>
+			Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %>
+		<% end %>
+	</span>
 	
 	<div class="menu-extras">
 	  <ul class="nav navbar-nav navbar-right pull-right">
