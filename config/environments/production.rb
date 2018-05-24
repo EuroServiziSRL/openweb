@@ -90,6 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #non faccio aggiornamenti in production
-  config.webpacker.check_yarn_integrity = false
+  #config.webpacker.check_yarn_integrity = false
   
 end
