@@ -71,6 +71,7 @@ footer {
   
   .topbar-main {
     background-color: #3bafda;
+    min-height: 30px;
     
     a.logo {
       background-image: image_url('civilianext.png');
@@ -209,7 +210,6 @@ footer {
     }
 }
 
-$screen-xs: 768px;
 @media (max-width: $screen-xs) {
   div.logo {
     display: block !important;
