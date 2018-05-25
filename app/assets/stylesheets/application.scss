@@ -316,6 +316,8 @@ textarea, input, select {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 195px;
+    cursor: pointer;
+    height: 30px;
     
     option {
       background-color: white;
@@ -326,6 +328,10 @@ textarea, input, select {
       line-height: 1.42857;
       padding: 3px 20px;
       white-space: nowrap;      
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
     }
 }
 #cliente_id::before {
@@ -448,4 +454,50 @@ ol, ul {
 
 .btn-app.btn-warning:hover {
     background: linear-gradient(to bottom, #ffaa33 0%, #fc9200 100%) repeat-x scroll 0 0 #fe9e19 !important;
+}
+
+.pagination {
+  a {
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  em, span {
+    cursor: default;
+  }
+  a, em, span {
+    box-sizing: border-box;
+    line-height: 2.2em;
+    min-width: 2.5em;
+    padding: 0 0.9em;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    background-image: none;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    text-shadow: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333;
+    
+    &.current {
+      background-color: #e9e9e9;
+      background-image: none;
+      border-color: #c5c5c5;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    }
+  }
+  span {
+    color: #999;
+  }
+  
+  .next_page, .previous_page {
+    visibility: hidden;
+    display: none;
+  }
 }
