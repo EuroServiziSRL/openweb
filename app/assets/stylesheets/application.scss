@@ -92,39 +92,39 @@ footer {
       letter-spacing: 0.05em;
       margin-top: 9px;
       line-height: 12px;
+    }
       
-      + span {
-	display: inline-block;
-	letter-spacing: 0.02em;
-	margin-right: 20px;
-	padding: 5px 0;
-	vertical-align: top;
-	
-	color: #fff;
-	display: inline-block;
-	float: left;
-	font-size: 13px;
-	font-weight: bold;
-	margin-left: 20px;    
-      }
+    .title {
+      display: inline-block;
+      letter-spacing: 0.02em;
+      margin-right: 20px;
+      padding: 5px 0;
+      vertical-align: top;
       
-      + span::before {
-	content: "";
-	display: inline-block;
-	font-family: FontAwesome;
-	font-feature-settings: normal;
-	font-kerning: auto;
-	font-language-override: normal;
-	font-size: inherit;
-	font-size-adjust: none;
-	font-stretch: normal;
-	font-style: normal;
-	font-synthesis: weight style;
-	font-variant: normal;
-	font-weight: normal;
-	margin-right: 5px;
-	text-rendering: auto;
-      }
+      color: #fff;
+      display: inline-block;
+      float: left;
+      font-size: 13px;
+      font-weight: bold;
+      margin-left: 20px;    
+    }
+    
+    .title::before {
+      content: "";
+      display: inline-block;
+      font-family: FontAwesome;
+      font-feature-settings: normal;
+      font-kerning: auto;
+      font-language-override: normal;
+      font-size: inherit;
+      font-size-adjust: none;
+      font-stretch: normal;
+      font-style: normal;
+      font-synthesis: weight style;
+      font-variant: normal;
+      font-weight: normal;
+      margin-right: 5px;
+      text-rendering: auto;
     }
   }
   
@@ -171,6 +171,83 @@ footer {
   .navbar-nav > li > a {
     padding: 5px 20px;
     color: #000000;
+  }
+}
+
+#cliente_id {
+    -webkit-appearance: none; 
+    appearance: none;
+    background: none repeat scroll 0 0 transparent !important;
+    border: 0 none;
+    color: #ffffff !important;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 195px;
+    cursor: pointer;
+    height: 30px;
+    font-family: 'FontAwesome', 'Noto Sans',sans-serif;
+    
+    option {
+      background-color: white;
+      clear: both;
+      color: #333333;
+      display: block;
+      font-weight: normal;
+      line-height: 1.42857;
+      padding: 3px 20px;
+      white-space: nowrap;      
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+$screen-xs: 768px;
+@media (max-width: $screen-xs) {
+  div.logo {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    
+    span {
+      display: block !important;
+    }
+  }
+  
+  .topbar-main .nav > li {
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .topbar-main .menu-extras .nav {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #topnav .topbar-main .logo {
+    line-height: initial;
+  }
+  
+  #topnav .topbar-main {
+    max-height: 62px;
+  }
+  
+  #cliente_id {
+    text-align: right;
+    
+    option {
+      text-align: left;
+    }
+  }
+  #cliente_id, .topbar-main .nav > li > a {
+    width: 40vw;
   }
 }
 
@@ -299,58 +376,6 @@ input[type="checkbox"] {
 
 textarea, input, select {
   font-weight: bold;
-}
-
-#cliente_id {
-    -webkit-appearance: none; 
-    appearance: none;
-    background: none repeat scroll 0 0 transparent !important;
-    border: 0 none;
-    color: #ffffff !important;
-    font-size: inherit;
-    font-weight: normal;
-    line-height: 30px;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 195px;
-    cursor: pointer;
-    height: 30px;
-    font-family: 'FontAwesome', 'Noto Sans',sans-serif;
-    
-    option {
-      background-color: white;
-      clear: both;
-      color: #333333;
-      display: block;
-      font-weight: normal;
-      line-height: 1.42857;
-      padding: 3px 20px;
-      white-space: nowrap;      
-    }
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1) !important;
-    }
-}
-#cliente_id::before {
-  content: "";
-  display: inline-block;
-  font-family: FontAwesome;
-  font-feature-settings: normal;
-  font-kerning: auto;
-  font-language-override: normal;
-  font-size: inherit;
-  font-size-adjust: none;
-  font-stretch: normal;
-  font-style: normal;
-  font-synthesis: weight style;
-  font-variant: normal;
-  font-weight: normal;
-  margin-right: 5px;
-  text-rendering: auto;
 }
 
 ul.dd-list, ol.dd-list {

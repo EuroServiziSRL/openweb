@@ -28,11 +28,14 @@
 	  <span>OPENWEB</span>
 	</div>
 	
-	<span>
-		<% if user_signed_in? %>
-			Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %>
-		<% end %>
-	</span>
+	<% if user_signed_in? %>
+	  <span class="title hidden-sm hidden-xs">
+	    Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %>
+	  </span>
+	  <span class="title hidden-lg hidden-xs">
+	    <%= @nome_pagina.blank? ? '' : "#{@nome_pagina}" %>
+	  </span>
+	<% end %>
 	
 	<div class="menu-extras">
 	  <ul class="nav navbar-nav navbar-right pull-right">
