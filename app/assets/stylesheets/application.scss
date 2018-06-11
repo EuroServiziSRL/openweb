@@ -175,12 +175,29 @@ footer {
   }
 }
 
+.form_cambio_ente.form-inline {
+    display: inline;
+    width: 80%;
+}
+
+#selettore_clienti, #aggiorna_ente_corrente{
+    width: 15px;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.2em;
+    margin-right: -20px;
+}
+#aggiorna_ente_corrente{
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
 #cliente_id {
     -webkit-appearance: none; 
     appearance: none;
     background: none repeat scroll 0 0 transparent !important;
     border: 0 none;
-    color: #ffffff !important;
+    color: #fff !important;
     font-size: inherit;
     font-weight: normal;
     line-height: 30px;
@@ -193,6 +210,9 @@ footer {
     cursor: pointer;
     height: 30px;
     font-family: 'FontAwesome', 'Noto Sans',sans-serif;
+    text-align: right;
+    padding-left: 20px;
+    
     
     option {
       background-color: white;
@@ -202,12 +222,21 @@ footer {
       font-weight: normal;
       line-height: 1.42857;
       padding: 3px 20px;
-      white-space: nowrap;      
+      white-space: nowrap;
+      text-align: left;
     }
     
     &:hover {
       background-color: rgba(255, 255, 255, 0.1) !important;
     }
+}
+
+#ente_visualizzato{
+  color: #fff;
+  display: block;
+  font-weight: normal;
+  line-height: 1.42857;
+  padding: 6px 0;
 }
 
 @media (max-width: $screen-xs) {
@@ -224,6 +253,7 @@ footer {
   .topbar-main .nav > li {
     text-align: left;
     display: inline-block;
+    width: 90%;
   }
   
   .topbar-main .menu-extras .nav {
@@ -239,13 +269,6 @@ footer {
     max-height: 62px;
   }
   
-  #cliente_id {
-    text-align: right;
-    
-    option {
-      text-align: left;
-    }
-  }
   #cliente_id, .topbar-main .nav > li > a {
     width: 40vw;
   }
@@ -392,17 +415,19 @@ ol, ul {
 .btn.btn-app {
     border: medium none !important;
     border-radius: 0;
-    color: #fff;
+    color: #5a5a5a;
     display: inline-block;
     font-size: 14px;
     font-weight: normal;
     line-height: 1.3;
     margin: 2px;
-    padding: 12px 0;
+    padding: 12px 3px;
     position: relative;
     text-align: center;
     white-space: normal;
     width: 100%;
+    
+    
 }
 
 .btn.btn-app > .icon {
@@ -436,10 +461,6 @@ ol, ul {
   background: linear-gradient(to bottom, #3b98d6 0%, #197ec1 100%) repeat-x scroll 0 0 #2a8bcb !important;
 }
 
-.btn-app, .btn-app.btn-default, .btn-app.no-hover:hover, .btn-app.btn-default.no-hover:hover, .btn-app.disabled:hover, .btn-app.btn-default.disabled:hover {
-  background: linear-gradient(to bottom, #bcc9d5 0%, #abbac3 100%) repeat-x scroll 0 0 #b4c2cc !important;
-}
-
 .btn-app.btn-warning, .btn-app.btn-warning.no-hover:hover, .btn-app.btn-warning.disabled:hover {
   background: linear-gradient(to bottom, #ffbf66 0%, #ffa830 100%) repeat-x scroll 0 0 #ffb44b !important;
 }
@@ -448,8 +469,7 @@ ol, ul {
     background: linear-gradient(to bottom, #4a9ede 0%, #348dc9 100%) repeat-x scroll 0 0 #3f96d4 !important;
 }
 .btn, .btn:hover, .btn:active, .btn:focus {
-    border-bottom-style: solid !important;
-    border-bottom-width: 2px !important;
+    border: 1px solid #707070 !important;
 }
 .btn-app.btn-info, .btn-app.btn-info.no-hover:hover, .btn-app.btn-info.disabled:hover {
     background: linear-gradient(to bottom, #75b5e6 0%, #5ba4d5 100%) repeat-x scroll 0 0 #68adde !important;
@@ -481,6 +501,36 @@ ol, ul {
 .btn-app.btn-warning:hover {
     background: linear-gradient(to bottom, #ffaa33 0%, #fc9200 100%) repeat-x scroll 0 0 #fe9e19 !important;
 }
+
+/* colori di default  */
+.btn-app, .btn-app.btn-default, .btn-app.no-hover:hover, .btn-app.btn-default.no-hover:hover, .btn-app.disabled:hover, .btn-app.btn-default.disabled:hover {
+  background: linear-gradient(to bottom, #bcc9d5 0%, #abbac3 100%) repeat-x scroll 0 0 #b4c2cc !important;
+  /* classi per colori in dashboard admin */
+    &.affarigenerali{
+      background: linear-gradient(to bottom, #ccd3d7 0%, #ccd3d7 100%) repeat-x scroll 0 0 #ccd3d7 !important;
+    }
+    
+    &.app{
+      background: linear-gradient(to bottom, #6f99b1 0%, #6f99b1 100%) repeat-x scroll 0 0 #6f99b1 !important;
+    }
+    
+    &.contabilita{
+      background: linear-gradient(to bottom, #78b16f 0%, #78b16f 100%) repeat-x scroll 0 0 #78b16f !important;
+    }
+    
+    &.demografia{
+      background: linear-gradient(to bottom, #d7d1cc 0%, #d7d1cc 100%) repeat-x scroll 0 0 #d7d1cc !important;
+    }
+    
+    &.entrate{
+      background: linear-gradient(to bottom, #ceccd7 0%, #ceccd7 100%) repeat-x scroll 0 0 #ceccd7 !important;
+    }
+    
+    &.portale{
+      background: linear-gradient(to bottom, #dce680 0%, #dce680 100%) repeat-x scroll 0 0 #dce680 !important;
+    }
+}
+
 
 .pagination {
   a {
@@ -527,3 +577,4 @@ ol, ul {
     display: none;
   }
 }
+

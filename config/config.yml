@@ -1,16 +1,17 @@
 # config/config.yml
 #per usare le conf: url = APP_CONFIG['api_url']
 
-
-
 test:
   logout_azure: false
   url_dominio: ""
-
+  locale: "it"
+  
 development:
   logout_azure: false
   url_dominio: ""
-  
+  locale: "it"
+ 
 production:
   logout_azure: false
   url_dominio: ""
+  locale: "it"

@@ -1,0 +1,26 @@
+it:
+    hello: "Ciao Mondo"
+    errors:
+        messages:
+            not_saved: "Salvataggio non riuscito!"
+    activerecord:
+        models:
+            auth_hub/user:
+                one: "Utente"
+                other: "Utenti"
+        attributes:
+            auth_hub/user:
+                password_confirmation: "Password di conferma"
+        errors:
+            models:
+                auth_hub/user:
+                    attributes:
+                        email:
+                            blank: "non può essere vuota."
+                            invalid: "con formato non valido."
+                            taken: "già registrata."
+                        password:
+                            blank: "non può essere vuota."
+                            too_short: "troppo corta (minimo 8 caratteri)."
+                        password_confirmation: 
+                            confirmation: " deve essere uguale alla prima password."

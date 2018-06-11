@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: 'authhub@soluzionipa.it'
+  layout 'mailer_openweb'
 end
