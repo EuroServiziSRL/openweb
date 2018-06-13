@@ -5,13 +5,16 @@ test:
   logout_azure: false
   url_dominio: ""
   locale: "it"
+  mail_admin: 'fabianopavan84@gmail.com'
   
 development:
   logout_azure: false
   url_dominio: ""
   locale: "it"
+  mail_admin: 'fabianopavan84@gmail.com'
  
 production:
   logout_azure: false
   url_dominio: ""
   locale: "it"
+  mail_admin: 'fabianopavan84@gmail.com'
