@@ -24,3 +24,8 @@ it:
                             too_short: "troppo corta (minimo 8 caratteri)."
                         password_confirmation: 
                             confirmation: " deve essere uguale alla prima password."
+                            
+    will_paginate:
+        page_entries_info:
+            multi_page_html: "%{model} da %{from} a %{to} di %{count}"
+            single_page_html: "%{model} totali %{count}"

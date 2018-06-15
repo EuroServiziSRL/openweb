@@ -61,9 +61,11 @@
 					    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
 					  </li>
 					  <% end %>
-					  <li>
-					    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
-					  </li>
+					  <% if current_user.provider != "azure_oauth2" %>
+						  <li>
+						    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
+						  </li>
+					  <% end %>
 					  <li>
 					    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 					  </li>
