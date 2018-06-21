@@ -60,8 +60,13 @@ $(document).ready(function() {
   });
   $('.circliful-chart').circliful();
   */
-    console.log("initialize dropdown");
-    $(".dropdown-toggle").dropdown();
+  /* console.log("initialize dropdown"); */
+  $(".dropdown-toggle").dropdown();
+  
+  /* faccio il submit del form al click su aggiorna enti  */
+  $("#cliente_id").on("change",function(){
+    $(".form_cambio_ente").submit();
+  })
   
 });
 

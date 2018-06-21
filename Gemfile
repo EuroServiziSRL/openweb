@@ -10,6 +10,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+gem 'config'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
@@ -76,4 +77,3 @@ gem 'rails_admin', '~> 1.2'
 gem 'filterrific'
 gem 'will_paginate', '~> 3.1.1'
 gem 'email_verifier'
-gem 'email_detected'

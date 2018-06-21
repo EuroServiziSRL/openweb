@@ -1,0 +1,9 @@
+logout_azure: false
+url_dominio: ""
+dominio_email: ""
+locale: "it"
+#mail_admin_to: 'assistenza@soluzionipa.it'
+mail_admin_to: 'fabiano.pavan@soluzionipa.it'
+mail_admin_from: 'noreply@openweb.it'
+client_id_app_azure: '768f0277-4ede-449c-8036-38164da49ba2'
+client_secret_app_azure: "r7uHkApxvkGy95fIpIrWdEJrmea7WcA/fTLUYJQ8tSk="

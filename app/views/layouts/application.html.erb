@@ -25,12 +25,12 @@
 	  <a class="logo" href="/auth_hub/dashboard"></a>
 	</div>-->
 	<div class="logo">
-	  <span>OPENWEB</span>
+	  <span><a href="<%= main_app.root_url %>" class="color_link">OPENWEB</a></span>
 	</div>
 	
 	<% if user_signed_in? %>
 	  <span class="title hidden-sm hidden-xs">
-	    Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %>
+	    <a class="color_link" href="<%= AuthHub::Engine.routes.url_helpers.dashboard_path %>">Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></a>
 	  </span>
 	  <span class="title hidden-lg hidden-xs">
 	    <%= @nome_pagina.blank? ? '' : "#{@nome_pagina}" %>
@@ -39,26 +39,30 @@
 	
 	<div class="menu-extras">
 	  <ul class="nav navbar-nav navbar-right pull-right">
-	    
 	    <% if user_signed_in? %>
-	      <li>
-						<%= form_tag(cambia_ente_path, class: 'form_cambio_ente form-inline') do %>
-							<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length == 1 %>
-								<span id="ente_visualizzato"><%= @ente_principale %></span>
-							<% end %>
+	        <li>
+				<%= form_tag(AuthHub::Engine.routes.url_helpers.cambia_ente_path, class: 'form_cambio_ente form-inline') do %>
+					<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length == 1 %>
+						<span id="ente_visualizzato"><%= @ente_principale %></span>
+					<% end %>
 			      	<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length > 1 %> 
 			      		<i id="selettore_clienti" alt="Cambia ente" class="fa fa-caret-square-o-down"></i>
-			      		<%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale)) %>
-			      		<i id="aggiorna_ente_corrente" class="fa fa-refresh" aria-hidden="true"></i>
+			      		<%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale.clienti_cliente.ID)) %>
+			      		<!-- <i id="aggiorna_ente_corrente" class="fa fa-refresh" alt="Aggiorna Ente" aria-hidden="true"></i> -->
 			      	<% end %>
-						<% end %>
-	      </li>
-	      <li class="dropdown">
+				<% end %>
+	        </li>
+	        <li class="dropdown">
 					<a data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user"></i> <%= current_user.nome_cognome %></a>
 					<ul class="dropdown-menu">
 					  <% if current_user.superadmin_role %>
 					  <li>
 					    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
+					  </li>
+					  <% end %>
+					  <% if current_user.admin_role %>
+					  <li>
+					    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
 					  </li>
 					  <% end %>
 					  <% if current_user.provider != "azure_oauth2" %>
@@ -70,7 +74,7 @@
 					    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 					  </li>
 					</ul>
-	      </li>
+	        </li>
 	    <% end %>
 	  </ul>
 

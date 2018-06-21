@@ -11,14 +11,12 @@ module Openweb
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    WillPaginate.per_page = 10
+    WillPaginate.per_page = 15
 
+    #mail che viene usata solo per verificare l'esistenza di una mail in fase
+    #di registrazione dell'utente
     EmailVerifier.config do |config|
-      config.verifier_email = "andrea.grazian@soluzionipa.it"
-    end
-    
-    EmailDetected.config do |config|
-      config.verifier_email = "andrea.grazian@soluzionipa.it"
+      config.verifier_email = "assistenza@soluzionipa.it"
     end
 
     # Settings in config/environments/* take precedence over those specified here.
