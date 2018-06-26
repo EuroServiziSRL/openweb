@@ -43,7 +43,7 @@
 	        <li>
 				<%= form_tag(AuthHub::Engine.routes.url_helpers.cambia_ente_path, class: 'form_cambio_ente form-inline') do %>
 					<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length == 1 %>
-						<span id="ente_visualizzato"><%= @ente_principale %></span>
+						<span id="ente_visualizzato"><%= @ente_principale.clienti_cliente.CLIENTE.strip %></span>
 					<% end %>
 			      	<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length > 1 %> 
 			      		<i id="selettore_clienti" alt="Cambia ente" class="fa fa-caret-square-o-down"></i>
