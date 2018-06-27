@@ -14,6 +14,7 @@ gem 'config'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
+gem 'addressable', '2.5.2'
 
 gem 'mysql2', '0.4.10'
 # Use Puma as the app server
