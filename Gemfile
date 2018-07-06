@@ -9,14 +9,14 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '= 5.2.0'
 gem 'config'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
 gem 'addressable', '2.5.2'
 
-gem 'mysql2', '0.4.10'
+gem 'mysql2', '= 0.4.10'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use Uglifier as compressor for JavaScript assets
@@ -67,7 +67,6 @@ gem 'devise'
 gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git' #le gemma non la installa, vuole railties < 5.0
 gem 'omniauth'
 gem 'omniauth-azure-oauth2'
-gem 'auth_hub', path: 'engines/auth_hub'
 gem 'font-awesome-sass'
 gem 'font-ionicons-rails'
 gem 'material_design_icons_rails'
@@ -78,3 +77,5 @@ gem 'rails_admin', '~> 1.2'
 gem 'filterrific'
 gem 'will_paginate', '~> 3.1.1'
 gem 'email_verifier'
+
+gem 'auth_hub', path: 'engines/auth_hub'

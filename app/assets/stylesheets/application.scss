@@ -597,31 +597,28 @@ ol, ul {
   @extend .fa-list-alt;
 }
 .ici_calcolo{
-  @extend .fa-user;
+  @extend .fa-home;
 }
 .trasparenza{
   @extend .fa-eye;
 }
 .albo{
-  @extend .fa-user;
+  @extend .fa-book;
 }
 .benefici{
-  @extend .fa-user;
+  @extend .fa-pencil;
 }
 .pratiche{
-  @extend .fa-user;
-}
-.caricamento_pratiche{
   @extend .fa-file;
 }
-.commissione{
-  @extend .fa-user;
+.caricamento_pratiche{
+  @extend .fa-upload;
 }
 .ici_posizione{
-  @extend .fa-user;
+  @extend .fa-home;
 }
 .tarsu{
-  @extend .fa-user;
+  @extend .fa-trash-o;
 }
 .contablita{
   @extend .fa-user;
@@ -631,12 +628,6 @@ ol, ul {
 }
 .muse{
   @extend .fa-window-restore;
-}
-.demografici{
-  @extend .fa-user;
-}
-.cimiteri{
-  @extend .fa-user;
 }
 .cms{
   @extend .fa-object-group;
@@ -648,10 +639,10 @@ ol, ul {
   @extend .fa-paper-plane;
 }
 .prisma{
-  @extend .fa-user;
+  @extend .fa-cubes;
 }
 .appuntamenti{
-  @extend .fa-user;
+  @extend .fa-calendar;
 }
 .funzioni_speciali{
   @extend .fa-cogs;
