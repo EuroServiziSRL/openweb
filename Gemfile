@@ -73,7 +73,7 @@ gem 'material_design_icons_rails'
 #gem 'weather-icons-for-rails'
 
 gem 'cancancan', '~> 2.1'
-gem 'rails_admin', '~> 1.2'
+gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 gem 'filterrific'
 gem 'will_paginate', '~> 3.1.1'
 gem 'email_verifier'
