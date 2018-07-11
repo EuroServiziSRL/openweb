@@ -20,131 +20,136 @@
   <body class="fixed-left widescreen">
   
     <header id="topnav" class="tagline"> 
-      <div class="container topbar-main"> 
-	<!--<div class="logo">
-	  <a class="logo" href="/auth_hub/dashboard"></a>
-	</div>-->
-	<div class="logo">
-	  <span><a href="<%= main_app.root_url %>" class="color_link">OPENWEB</a></span>
-	</div>
+	    <div class="container topbar-main"> 
+			<!--<div class="logo">
+			  <a class="logo" href="/auth_hub/dashboard"></a>
+			</div>-->
+			<div class="logo">
+			  <span><a href="<%= main_app.root_url %>" class="color_link">OPENWEB</a></span>
+			</div>
+			
+			<% if user_signed_in? %>
+			  <span class="title hidden-sm hidden-xs">
+			    <a class="color_link" href="<%= AuthHub::Engine.routes.url_helpers.dashboard_path %>">Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></a>
+			  </span>
+			  <span class="title hidden-lg hidden-xs">
+			    <%= @nome_pagina.blank? ? '' : "#{@nome_pagina}" %>
+			  </span>
+			<% end %>
+		
+			<div class="menu-extras">
+				<ul class="nav navbar-nav navbar-right pull-right">
+				    <% if user_signed_in? %>
+				        <li>
+							<%= form_tag(AuthHub::Engine.routes.url_helpers.cambia_ente_path, class: 'form_cambio_ente form-inline') do %>
+								<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length == 1 %>
+									<span id="ente_visualizzato"><%= @ente_principale.clienti_cliente.CLIENTE.strip %></span>
+								<% end %>
+						      	<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length > 1 %> 
+						      		<i id="selettore_clienti" alt="Cambia ente" class="fa fa-caret-square-o-down"></i>
+						      		<%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale.clienti_cliente.ID)) %>
+						      		<!-- <i id="aggiorna_ente_corrente" class="fa fa-refresh" alt="Aggiorna Ente" aria-hidden="true"></i> -->
+						      	<% end %>
+							<% end %>
+				        </li>
+				        <li class="dropdown">
+								<a data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user"></i> <%= current_user.nome_cognome %></a>
+								<ul class="dropdown-menu">
+								  <% if current_user.superadmin_role %>
+								  <li>
+								    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
+								  </li>
+								  <% end %>
+								  <% if current_user.admin_role %>
+								  <li>
+								    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
+								  </li>
+								  <% end %>
+								  <% if current_user.provider != "azure_oauth2" %>
+									  <li>
+									    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
+									  </li>
+								  <% end %>
+								  <li>
+								    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
+								  </li>
+								</ul>
+				        </li>
+				    <% end %>
+				</ul>
 	
-	<% if user_signed_in? %>
-	  <span class="title hidden-sm hidden-xs">
-	    <a class="color_link" href="<%= AuthHub::Engine.routes.url_helpers.dashboard_path %>">Dashboard <%= current_user.blank? ? '' : current_user.descrizione_ruolo %> <%= @nome_pagina.blank? ? '' : " - #{@nome_pagina}" %></a>
-	  </span>
-	  <span class="title hidden-lg hidden-xs">
-	    <%= @nome_pagina.blank? ? '' : "#{@nome_pagina}" %>
-	  </span>
-	<% end %>
-	
-	<div class="menu-extras">
-	  <ul class="nav navbar-nav navbar-right pull-right">
-	    <% if user_signed_in? %>
-	        <li>
-				<%= form_tag(AuthHub::Engine.routes.url_helpers.cambia_ente_path, class: 'form_cambio_ente form-inline') do %>
-					<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length == 1 %>
-						<span id="ente_visualizzato"><%= @ente_principale.clienti_cliente.CLIENTE.strip %></span>
-					<% end %>
-			      	<% if !@array_enti_gestiti.blank? && @array_enti_gestiti.length > 1 %> 
-			      		<i id="selettore_clienti" alt="Cambia ente" class="fa fa-caret-square-o-down"></i>
-			      		<%= select_tag(:cliente_id, options_for_select(@array_enti_gestiti,@ente_principale.clienti_cliente.ID)) %>
-			      		<!-- <i id="aggiorna_ente_corrente" class="fa fa-refresh" alt="Aggiorna Ente" aria-hidden="true"></i> -->
-			      	<% end %>
-				<% end %>
-	        </li>
-	        <li class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user"></i> <%= current_user.nome_cognome %></a>
-					<ul class="dropdown-menu">
-					  <% if current_user.superadmin_role %>
-					  <li>
-					    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
-					  </li>
-					  <% end %>
-					  <% if current_user.admin_role %>
-					  <li>
-					    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
-					  </li>
-					  <% end %>
-					  <% if current_user.provider != "azure_oauth2" %>
-						  <li>
-						    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
-						  </li>
-					  <% end %>
-					  <li>
-					    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
-					  </li>
-					</ul>
-	        </li>
-	    <% end %>
-	  </ul>
-
-	  <div class="menu-item">
-	    <!-- Mobile menu toggle-->
-	    <a class="navbar-toggle">
-	      <div class="lines">
-		<span></span>
-		<span></span>
-		<span></span>
-	      </div>
-	    </a>
-	    <!-- End mobile menu toggle-->
-	    </div>
-	  </div>
-	<div class="clear"></div>
-</div>
-
-<!--<div class="navbar navbar-custom sticky" role="navigation">
-	<div class="container">
-	  <div class="navigation">
-	    <ul class="navigation-menu">
-	    </ul>
-	  </div>
-	</div>
-      </div>-->
-    </header>
+				<div class="menu-item">
+				    <!-- Mobile menu toggle-->
+				    <a class="navbar-toggle">
+				      <div class="lines">
+						<span></span>
+						<span></span>
+						<span></span>
+				      </div>
+				    </a>
+				    <!-- End mobile menu toggle-->
+		    	</div>
+		    </div>
+		    <div class="clear"></div>
+		</div>
+		<!-- Barra con sfondo bianco per link -->
+		<% unless session[:link_navigazione_utente].blank? %>
+			<div class="navbar navbar-custom sticky" role="navigation" id="barra_link_navigazione_utente">
+				<div class="container-fluid">
+				  <div class="navigation">
+				    <ul class="nav navbar-nav">
+				    	<% session[:link_navigazione_utente].each do |link| %>	
+				    		<li><a href="<%= link['url'] %>"><%= link['titolo'] %></a></li>
+				    	<% end %>
+				    </ul>
+				  </div>
+				</div>
+		    </div>
+		<% end %>
+  	</header>
     
     <div class="clearfix"></div>    
   
     <div class="wrapper">
-      <div class="container">
-	<div class="row">
+        <div class="container">
+			<div class="row">
 	  
-	  <div id="contentColumn" class="col-lg-12 col-md-12">
-   
-	      
-	      <!-- gestiti a livello di view interna -->
-	    <!--  <% if !notice.blank? || !alert.blank? %>-->
-					<!--<div id="notify">-->
-					<!--    <% unless notice.blank?  %>-->
-					<!--      <p class="notice"><%= notice %></p>-->
-					<!--    <% end  %>-->
-					<!--    <% unless alert.blank?  %>-->
-					<!--      <p class="alert"><%= alert %></p>-->
-					<!--    <% end  %>-->
-					<!--</div>-->
-	    <!--  <% end  %>-->
-	      
-	      
-	      
-	      <%= yield %>
-	      
-	  </div>
+			    <div id="contentColumn" class="col-lg-12 col-md-12">
+		   
+			      
+			      <!-- gestiti a livello di view interna -->
+			    <!--  <% if !notice.blank? || !alert.blank? %>-->
+							<!--<div id="notify">-->
+							<!--    <% unless notice.blank?  %>-->
+							<!--      <p class="notice"><%= notice %></p>-->
+							<!--    <% end  %>-->
+							<!--    <% unless alert.blank?  %>-->
+							<!--      <p class="alert"><%= alert %></p>-->
+							<!--    <% end  %>-->
+							<!--</div>-->
+			    <!--  <% end  %>-->
+			      
+			      
+			      
+			        <%= yield %>
+			      
+			    </div>
 	  
-	</div>			
+			</div>			
 	
-	<footer class="footer">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-lg-4 col-lg-offset-4 text-center">
-	      	OPENWEB
-	      </div>
-	      <div class="col-lg-4 text-right">
-		<!--<img src="//next-we-prod-cdn-app.azurewebsites.net/custom-assets/images/logodeda.png" alt="dedagroup spa" />-->
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-      </div>
+			<footer class="footer">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-lg-4 col-lg-offset-4 text-center">
+			      	OPENWEB
+			      </div>
+			      <div class="col-lg-4 text-right">
+				<!--<img src="//next-we-prod-cdn-app.azurewebsites.net/custom-assets/images/logodeda.png" alt="dedagroup spa" />-->
+			      </div>
+			    </div>
+			  </div>
+			</footer>
+        </div>
     </div>
       
   </body>
