@@ -25,7 +25,7 @@ module RailsAdmin
                     end
                     return reaction, subject
                 end
-          end
+            end
         end
     end
 end
@@ -77,30 +77,75 @@ RailsAdmin.config do |config|
     # history_show
   end
   
+  config.excluded_models << "AuthHub::ClientiLinkfunzione"
+  config.excluded_models << "AuthHub::ClientiDettordine"
+  config.excluded_models << "AuthHub::ClientiScadenza"
+  config.excluded_models << "AuthHub::ClientiStatistica"
+  config.excluded_models << "AuthHub::ClientiTipostatistica"
+  config.excluded_models << "AuthHub::ClientiApplicazioneRefClientiOrdine"
   
   config.model 'AuthHub::ClientiApplicazione' do
     label "Applicazione" 
     label_plural "Applicazioni"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS, :AREA, :ID_LINKFUNZIONI
+    end
+    object_label_method do
+        :NOME
+    end
   end
   config.model 'AuthHub::ClientiInstallazione' do
     label "Installazione" 
     label_plural "Installazioni"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS,:ID_APPLICAZIONI,:CODICEFISCALE,:PARTITAIVA,:ID_ANAGRAFICA,:BELFIORE
+    end
+    object_label_method do
+        :CLIENTE
+    end
   end
   config.model 'AuthHub::ClientiCliente' do
     label "Cliente" 
     label_plural "Clienti"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS
+    end
+    show do
+        exclude_fields :enti_gestiti
+    end
+    edit do
+        exclude_fields :enti_gestiti
+    end
+    object_label_method do
+        :CLIENTE
+    end
   end
   config.model 'AuthHub::ClientiAllegato' do
     label "Allegato" 
     label_plural "Allegati"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS
+    end
   end
   config.model 'AuthHub::ClientiApplinstallate' do
     label "App Installata" 
     label_plural "App Installate"
+    list do
+        exclude_fields :CR_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS
+    end
+    object_label_method do
+        :APPLICAZIONE
+    end
   end
   config.model 'AuthHub::ClientiAttivazione' do
     label "Attivazione" 
     label_plural "Attivazioni"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS, :VIRTUALHOST, :PACCHETTO,:REPOSITORY,:COMMIT,:DEPLOY,:ID_SERVER
+    end
+    object_label_method do
+        :custom_label_method
+    end
   end
    config.model 'AuthHub::ClientiDettordine' do
     label "Dettaglio Ordine" 
@@ -113,6 +158,12 @@ RailsAdmin.config do |config|
    config.model 'AuthHub::ClientiOrdine' do
     label "Ordine" 
     label_plural "Ordini"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS
+    end
+    object_label_method do
+        :DESCRIZIONE
+    end
   end
    config.model 'AuthHub::ClientiScadenza' do
     label "Scadenza" 
@@ -133,10 +184,25 @@ RailsAdmin.config do |config|
   config.model 'AuthHub::User' do
     label "Utente" 
     label_plural "Utenti"
+    list do
+        exclude_fields :clienti_clienti
+    end
+    show do
+        exclude_fields :clienti_clienti
+    end
+    edit do
+        exclude_fields :clienti_clienti
+    end
+    object_label_method do
+        :email
+    end
   end
   config.model 'AuthHub::EnteGestito' do
     label "Ente Gestito" 
     label_plural "Enti Gestiti"
+    object_label_method do
+        :custom_label_method
+    end
   end
   
   
