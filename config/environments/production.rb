@@ -97,8 +97,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'soluzionipa.it',
-    user_name:            'fabiano.pavan@soluzionipa.it',
-    password:             'cambiami',
+    user_name:            'sviluppo@soluzionipa.it',
+    password:             'sviluppopa',
     authentication:       'plain',
     enable_starttls_auto: true }
   
