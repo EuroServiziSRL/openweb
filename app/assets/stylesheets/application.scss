@@ -288,6 +288,12 @@ footer {
   #cliente_id, .topbar-main .nav > li > a {
     width: 40vw;
   }
+  
+  .topbar-main .nav > li {
+      display: inline-block;
+      text-align: left;
+      width: 44%;
+  }
 }
 
 .panel-body {
