@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_084929) do
+ActiveRecord::Schema.define(version: 2018_08_24_125114) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2018_07_11_084929) do
     t.text "jwt"
     t.datetime "jwt_created"
     t.string "stato"
+    t.string "ente"
+    t.string "telefono"
     t.index ["email"], name: "index_auth_hub_users_on_email", unique: true
     t.index ["password_changed_at"], name: "index_auth_hub_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_auth_hub_users_on_reset_password_token", unique: true
