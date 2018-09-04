@@ -13,6 +13,8 @@ module Openweb
     config.i18n.available_locales = :it
     config.i18n.default_locale = :it
 
+    config.time_zone = "Rome"
+
     WillPaginate.per_page = 15
 
     #mail che viene usata solo per verificare l'esistenza di una mail in fase
