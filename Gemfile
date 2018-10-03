@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
 gem 'addressable', '2.5.2'
 
+gem 'rack-cors', require: 'rack/cors'
+
 gem 'mysql2', '= 0.4.10'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
