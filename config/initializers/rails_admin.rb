@@ -207,6 +207,18 @@ RailsAdmin.config do |config|
         :custom_label_method
     end
   end
+#   config.model '::OauthApplication' do
+#     label "Applicazione Oauth" 
+#     label_plural "Applicazione Oauth"
+#   end
+#   config.model '::OauthAccessToken' do
+#     label "Access Token Oauth" 
+#     label_plural "Access Tokens Oauth"
+#   end
+#   config.model '::OauthAccessGrant' do
+#     label "Access Grant Oauth" 
+#     label_plural "Access Grants Oauth"
+#   end
   
   
   config.parent_controller = 'ApplicationController'

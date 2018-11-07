@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'multiverse'   #permette di usare n database
 gem 'rmre'         #crea i models partendo da un database 
 gem 'jquery-rails' #jquery e Unobtrusive scripting adapter
-gem 'webpacker'
+gem 'webpacker', '= 3.5.5'
 gem 'devise'
 gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git' #le gemma non la installa, vuole railties < 5.0
 gem 'omniauth'

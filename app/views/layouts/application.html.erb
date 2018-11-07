@@ -19,9 +19,6 @@
     <%= javascript_pack_tag 'filterrific-jquery' %>
     <%-#  javascript_pack_tag 'hello_react' -%>
     
-    <!-- TODO: installare tramite yarn? -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      
   </head>
   <body class="fixed-left widescreen">
   
@@ -76,6 +73,9 @@
 									    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
 									  </li>
 								  <% end %>
+								  <li>
+								  	<%= link_to "Gestione Setup", AuthHub::Engine.routes.url_helpers.setups_path %>
+								  </li>
 								  <li>
 								    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
 								  </li>

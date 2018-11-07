@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
         ente_principale ||= ( AuthHub::EnteGestito.ente_principale_da_user(@current_user.id)[0] unless AuthHub::EnteGestito.ente_principale_da_user(@current_user.id).blank? )
         #se non era stato inserito l'ente principale per lo user prendo il primo dell'array
         ente_principale ||= @current_user.enti_gestiti[0] unless @current_user.enti_gestiti.blank?
-        session['ente_corrente'] = ente_principale unless ente_principale.blank?
+        session['ente_corrente'] = ente_principale #unless ente_principale.blank?
       end
       #se session['ente_corrente'] è un hash devo caricare l'istanza di ente_gestito
       if session['ente_corrente'].is_a?(Hash)
