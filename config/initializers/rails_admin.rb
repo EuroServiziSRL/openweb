@@ -83,9 +83,11 @@ RailsAdmin.config do |config|
   config.excluded_models << "AuthHub::ClientiStatistica"
   config.excluded_models << "AuthHub::ClientiTipostatistica"
   config.excluded_models << "AuthHub::ClientiApplicazioneRefClientiOrdine"
+  config.excluded_models << 'AuthHub::Setup'
   #tolti per non avere problemi su migration..non servono..
   config.excluded_models << 'ActiveStorage::Blob'
   config.excluded_models << 'ActiveStorage::Attachment'
+  
   
   config.model 'AuthHub::ClientiApplicazione' do
     label "Applicazione" 
