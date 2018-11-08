@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery prepend: true
+    include Error::ErrorHandler
     before_action :set_configuration
     
     rescue_from CanCan::AccessDenied do |exception|
@@ -42,5 +43,7 @@ class ApplicationController < ActionController::Base
       end
       @current_user
     end
+    
+    
     
 end
