@@ -87,6 +87,11 @@ RailsAdmin.config do |config|
   #tolti per non avere problemi su migration..non servono..
   config.excluded_models << 'ActiveStorage::Blob'
   config.excluded_models << 'ActiveStorage::Attachment'
+  #escludo tabelle doorkeeper..i modelli devono avere auth_hub ma le tabelle no, crea casini...
+  #escludo da rails_admin per non avere errore entrando su rails_admin
+  config.excluded_models << "AuthHub::OauthAccessGrant"
+  config.excluded_models << "AuthHub::OauthAccessToken"
+  config.excluded_models << "AuthHub::OauthApplication"
   
   
   config.model 'AuthHub::ClientiApplicazione' do
