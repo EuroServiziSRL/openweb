@@ -58,29 +58,34 @@
 				        <li class="dropdown">
 								<a data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user"></i> <%= current_user.nome_cognome %></a>
 								<ul class="dropdown-menu">
-								  <% if current_user.superadmin_role %>
-								  <li>
-								    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
-								  </li>
-								  <% end %>
-								  <% if current_user.admin_role %>
-								  <li>
-								    <%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
-								  </li>
-								  <% end %>
-								  <% if current_user.provider != "azure_oauth2" %>
-									  <li>
-									    <%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
-									  </li>
-								  <% end %>
-								  <!---
-								  <li>
-								  	<%= link_to "Gestione Setup", AuthHub::Engine.routes.url_helpers.setups_path %>
-								  </li>
-								  -->
-								  <li>
-								    <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
-								  </li>
+									<% if current_user.superadmin_role %>
+									<li>
+										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
+									</li>
+									<% end %>
+									<% if current_user.admin_role %>
+										<li>
+										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
+										</li>
+									<% end %>
+									<% if current_user.wiki_hd %>
+										<li>
+											<%= link_to '<i class="fa fa-newspaper-o"></i> Wiki HD'.html_safe, WikiHd::Engine.routes.url_helpers.index_hd_path  %>
+										</li>
+									<% end %>
+									<% if current_user.provider != "azure_oauth2" %>
+										<li>
+											<%= link_to '<i class="fa fa-key"></i> Cambia Password'.html_safe, AuthHub::Engine.routes.url_helpers.cambia_password_admin_path  %>
+										</li>
+									<% end %>
+									<!---
+									<li>
+										<%= link_to "Gestione Setup", AuthHub::Engine.routes.url_helpers.setups_path %>
+									</li>
+									-->
+									<li>
+										<%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, AuthHub::Engine.routes.url_helpers.destroy_user_session_path, method: :delete  %>
+									</li>
 								</ul>
 				        </li>
 				    <% end %>

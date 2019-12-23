@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_130932) do
+ActiveRecord::Schema.define(version: 2019_12_23_125123) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -76,12 +76,13 @@ ActiveRecord::Schema.define(version: 2019_07_24_130932) do
     t.string "stato"
     t.string "ente"
     t.string "telefono"
+    t.boolean "wiki_hd"
     t.index ["email"], name: "index_auth_hub_users_on_email", unique: true
     t.index ["password_changed_at"], name: "index_auth_hub_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_auth_hub_users_on_reset_password_token", unique: true
   end
 
-  create_table "oauth_access_grants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "oauth_access_grants", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "resource_owner_id", null: false
     t.bigint "application_id", null: false
     t.string "token", null: false
@@ -94,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_130932) do
     t.index ["token"], name: "index_oauth_access_grants_on_token", unique: true
   end
 
-  create_table "oauth_access_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "oauth_access_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "resource_owner_id"
     t.bigint "application_id"
     t.text "token", null: false
@@ -109,7 +110,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_130932) do
     t.index ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id"
   end
 
-  create_table "oauth_applications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "oauth_applications", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "uid", null: false
     t.string "secret", null: false
@@ -121,7 +122,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_130932) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
-  create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
@@ -130,6 +131,27 @@ ActiveRecord::Schema.define(version: 2019_07_24_130932) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
+  create_table "wiki_hd_soluzioni", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "problematica"
+    t.text "testo_soluzione"
+    t.bigint "auth_hub_users_id"
+    t.bigint "wiki_hd_tags_id"
+    t.bigint "auth_hub_clienti_applicazione_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auth_hub_clienti_applicazione_id"], name: "index_wiki_hd_soluzioni_on_auth_hub_clienti_applicazione_id"
+    t.index ["auth_hub_users_id"], name: "index_wiki_hd_soluzioni_on_auth_hub_users_id"
+    t.index ["wiki_hd_tags_id"], name: "index_wiki_hd_soluzioni_on_wiki_hd_tags_id"
+  end
+
+  create_table "wiki_hd_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "wiki_hd_soluzioni", "auth_hub_users", column: "auth_hub_users_id"
+  add_foreign_key "wiki_hd_soluzioni", "wiki_hd_tags", column: "wiki_hd_tags_id"
 end

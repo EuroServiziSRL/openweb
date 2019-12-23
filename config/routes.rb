@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin_db', as: 'rails_admin'
   mount AuthHub::Engine => "/auth_hub", as: 'auth_hub'
+  mount WikiHd::Engine => "/wiki_hd", as: 'wiki_hd'
   
   #get "/test/:page" => "test#show"
   
