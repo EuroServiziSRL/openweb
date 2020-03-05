@@ -11,8 +11,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!-- Questo partial include i css degli engine -->
-    
+    <!-- Questo partial include i css degli engine, in base all'engine che sto usando va a prendere la view che importa i css -->
     <%= render "shared/header_engine" %>
     
     <%= javascript_pack_tag 'application' %>
@@ -68,7 +67,7 @@
 										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
 										</li>
 									<% end %>
-									<% if current_user.wiki_hd %>
+									<% if current_user.respond_to?(wiki_hd) && current_user.wiki_hd %>
 										<li>
 											<%= link_to '<i class="fa fa-newspaper-o"></i> Wiki HD'.html_safe, WikiHd::Engine.routes.url_helpers.index_hd_path  %>
 										</li>
