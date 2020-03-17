@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Openweb">
-    
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js" ></script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,8 +17,7 @@
     <%= render "shared/header_engine" %>
     
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'filterrific-jquery' %>
-    <%-#  javascript_pack_tag 'hello_react' -%>
+    <%= javascript_pack_tag 'filterrific-jquery'%>
     
   </head>
   <body class="fixed-left widescreen">
@@ -67,7 +68,7 @@
 										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
 										</li>
 									<% end %>
-									<% if current_user.respond_to?(wiki_hd) && current_user.wiki_hd %>
+									<% if current_user.respond_to?(:wiki_hd) && current_user.wiki_hd %>
 										<li>
 											<%= link_to '<i class="fa fa-newspaper-o"></i> Wiki HD'.html_safe, WikiHd::Engine.routes.url_helpers.index_hd_path  %>
 										</li>

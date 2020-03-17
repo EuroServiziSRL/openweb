@@ -9,61 +9,27 @@
 
 //= require filterrific/filterrific-jquery
 
-console.log('Hello World from Webpacker!')
-
-import 'jquery'
 import 'bootstrap'
 import 'jsonwebtoken'
 
 //inizializzo jquery-ujs
-import Rails from 'rails-ujs'
-Rails.start()
+// import Rails from 'rails-ujs'
+// Rails.start()
 
-import React from 'react';
-import { render } from 'react-dom';
-import SampleComponent from '../components/SampleComponent';
 
-console.log('Hello World from Webpacker! Ready for React!');
+//import SampleComponent from '../components/SampleComponent';
+
+
+/* importo application degli engines */
+import '../../../engines/wiki_hd/app/assets/javascripts/packs/application_wikihd'
+
 
 var jwt = require('jsonwebtoken');
 const uuidv1 = require('uuid/v1');
 var sha256 = require('js-sha256').sha256;
-var datetime = require('node-datetime').DateTime;
-// carico tutti i js installati via yarn
 
-// import {} from 'modernizr' // va in errore alla compilazione
-
-// import {} from 'fastclick'
-// import {} from 'jquery-slimscroll'
-// import {} from 'wowjs'
-// import {} from 'jquery.nicescroll'
-// import {} from 'jquery.scrollto'
-// import {} from 'switchery'
-// import {} from 'jquery-circliful'
-// import {} from 'jquery-sparkline'
-
-// import {} from 'detect/lib/tree-walk'
-// import {} from 'counterup/jquery.counterup'
-// import {} from 'jquery-waypoints/waypoints'
-// import {} from 'jquery-dashboard/dist/jquery.dashboard.core'
-// import {} from 'jquery-dashboard/dist/jquery.dashboard.jqueryui'
-// import {} from 'waves/dist/waves'
-
-var resizefunc = [];
 $(document).ready(function() {
   
-  /* Nascondo barra caricatore
-  const container = $("<div>");
-  $(".card-box").append(container);
-  render(<SampleComponent/>, container[0]);
-  
-  $('.counter').counterUp({
-      delay: 100,
-      time: 1200
-  });
-  $('.circliful-chart').circliful();
-  */
-  /* console.log("initialize dropdown"); */
   $(".dropdown-toggle").dropdown();
   
   /* faccio il submit del form al click su aggiorna enti  */
@@ -95,9 +61,7 @@ $(document).ready(function() {
   }
   
   
-  
-  
-  
+
   $("#restart").on('click',function(){
     var esito = confirm("Vuoi riavviare il sito ed applicare le nuove impostazioni?")
     if(esito){
@@ -123,6 +87,7 @@ $(document).ready(function() {
           //   'description': 'test'
           // },
           //cache : true,
+          //caso richiesta in preflight mode
           beforeSend: function (xhr){ 
               xhr.setRequestHeader('Authorization', jwt_token(dati_ente['nomeDb']));
               xhr.setRequestHeader("Access-Control-Allow-Origin",'*');

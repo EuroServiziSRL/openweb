@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_125123) do
+ActiveRecord::Schema.define(version: 2020_03_17_121137) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -131,27 +131,43 @@ ActiveRecord::Schema.define(version: 2019_12_23_125123) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
+  create_table "wiki_hd_allegati", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "nome"
+    t.string "dimensione"
+    t.bigint "soluzione_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["soluzione_id"], name: "index_wiki_hd_allegati_on_soluzione_id"
+  end
+
   create_table "wiki_hd_soluzioni", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "problematica"
     t.text "testo_soluzione"
-    t.bigint "auth_hub_users_id"
-    t.bigint "wiki_hd_tags_id"
+    t.bigint "auth_hub_user_id"
     t.bigint "auth_hub_clienti_applicazione_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["auth_hub_clienti_applicazione_id"], name: "index_wiki_hd_soluzioni_on_auth_hub_clienti_applicazione_id"
-    t.index ["auth_hub_users_id"], name: "index_wiki_hd_soluzioni_on_auth_hub_users_id"
-    t.index ["wiki_hd_tags_id"], name: "index_wiki_hd_soluzioni_on_wiki_hd_tags_id"
+    t.index ["auth_hub_user_id"], name: "index_wiki_hd_soluzioni_on_auth_hub_user_id"
+  end
+
+  create_table "wiki_hd_soluzioni_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "soluzione_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["soluzione_id"], name: "index_wiki_hd_soluzioni_tags_on_soluzione_id"
+    t.index ["tag_id"], name: "index_wiki_hd_soluzioni_tags_on_tag_id"
   end
 
   create_table "wiki_hd_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["nome"], name: "index_wiki_hd_tags_on_nome", unique: true
   end
 
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
-  add_foreign_key "wiki_hd_soluzioni", "auth_hub_users", column: "auth_hub_users_id"
-  add_foreign_key "wiki_hd_soluzioni", "wiki_hd_tags", column: "wiki_hd_tags_id"
+  add_foreign_key "wiki_hd_soluzioni", "auth_hub_users"
 end

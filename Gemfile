@@ -80,4 +80,8 @@ gem 'filterrific'
 gem 'will_paginate', '~> 3.1.1'
 gem 'email_verifier'
 
+gem 'react-rails'
+
+
 gem 'auth_hub', path: 'engines/auth_hub'
+gem 'wiki_hd', path: 'engines/wiki_hd'
