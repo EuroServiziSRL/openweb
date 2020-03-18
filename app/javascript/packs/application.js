@@ -9,12 +9,12 @@
 
 //= require filterrific/filterrific-jquery
 
-import 'bootstrap'
-import 'jsonwebtoken'
+import 'bootstrap';
+import 'jsonwebtoken';
 
 //inizializzo jquery-ujs
-// import Rails from 'rails-ujs'
-// Rails.start()
+import Rails from 'rails-ujs';
+Rails.start();
 
 
 //import SampleComponent from '../components/SampleComponent';
