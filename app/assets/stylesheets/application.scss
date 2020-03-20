@@ -608,64 +608,64 @@ ol, ul {
 }
 
 .portal{
-  @extend .fa-user;
+  @extend .fa-user !optional;
 }
 .comunicazioni{
-  @extend .fa-newspaper-o;
+  @extend .fa-newspaper-o !optional;
 }
 .moduli{
-  @extend .fa-list-alt;
+  @extend .fa-list-alt !optional;
 }
 .ici_calcolo{
-  @extend .fa-home;
+  @extend .fa-home !optional;
 }
 .trasparenza{
-  @extend .fa-eye;
+  @extend .fa-eye !optional;
 }
 .albo{
-  @extend .fa-book;
+  @extend .fa-book !optional;
 }
 .benefici{
-  @extend .fa-pencil;
+  @extend .fa-pencil !optional;
 }
 .pratiche{
-  @extend .fa-file;
+  @extend .fa-file !optional;
 }
 .caricamento_pratiche{
-  @extend .fa-upload;
+  @extend .fa-upload !optional;
 }
 .ici_posizione{
-  @extend .fa-home;
+  @extend .fa-home !optional;
 }
 .tarsu{
-  @extend .fa-trash-o;
+  @extend .fa-trash-o !optional;
 }
 .contablita{
-  @extend .fa-user;
+  @extend .fa-user !optional;
 }
 .fornitori{
-  @extend .fa-user;
+  @extend .fa-user !optional;
 }
 .muse{
-  @extend .fa-external-link;
+  @extend .fa-external-link !optional;
 }
 .cms{
-  @extend .fa-object-group;
+  @extend .fa-object-group !optional;
 }
 .pagamenti{
-  @extend .fa-credit-card;
+  @extend .fa-credit-card !optional;
 }
 .newsletter{
-  @extend .fa-paper-plane;
+  @extend .fa-paper-plane !optional;
 }
 .prisma{
-  @extend .fa-cubes;
+  @extend .fa-cubes !optional;
 }
 .appuntamenti{
-  @extend .fa-calendar;
+  @extend .fa-calendar !optional;
 }
 .funzioni_speciali{
-  @extend .fa-cogs;
+  @extend .fa-cogs !optional;
 }
 
 

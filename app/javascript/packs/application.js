@@ -28,6 +28,30 @@ var jwt = require('jsonwebtoken');
 const uuidv1 = require('uuid/v1');
 var sha256 = require('js-sha256').sha256;
 
+/* crea il token jwt, passo il nome del db per creare il clientid  */
+function jwt_token(nome_db) {
+    //var now = new Date.now();
+    //var exp_date = now.addHours(2); // 2 ore
+    var now = new Date().getTime();
+    var actualTimeInSeconds = new Date().getTime()/1000;
+    //1 hour from now, 60minuti * 60sec
+    var exp_date = (now + 60 * 60 * 1000)/1000;
+    var jti = uuidv1(); /* stringa alfanumerica random  */
+    var client_id = sha256(nome_db+jti) /* sha256 del nome del db e del jti  */
+    var payload = {
+      iss: 'auth_hub',
+      iat: actualTimeInSeconds, //secondi
+      exp: exp_date, //secondi
+      jti: jti,
+      client_id: client_id
+    };
+    var secret = $("#scrt").attr('data');
+    
+    var jwt_token = jwt.sign(payload, secret );
+    return "Bearer " + jwt_token;
+}
+
+
 $(document).ready(function() {
   
   $(".dropdown-toggle").dropdown();
@@ -37,31 +61,7 @@ $(document).ready(function() {
     $(".form_cambio_ente").submit();
   })
   
-  /* crea il token jwt, passo il nome del db per creare il clientid  */
-  function jwt_token(nome_db) {
-      //var now = new Date.now();
-      //var exp_date = now.addHours(2); // 2 ore
-      var now = new Date().getTime();
-      var actualTimeInSeconds = new Date().getTime()/1000;
-      //1 hour from now, 60minuti * 60sec
-      var exp_date = (now + 60 * 60 * 1000)/1000;
-      var jti = uuidv1(); /* stringa alfanumerica random  */
-      var client_id = sha256(nome_db+jti) /* sha256 del nome del db e del jti  */
-      var payload = {
-        iss: 'auth_hub',
-        iat: actualTimeInSeconds, //secondi
-        exp: exp_date, //secondi
-        jti: jti,
-        client_id: client_id
-      };
-      var secret = $("#scrt").attr('data');
-      
-      var jwt_token = jwt.sign(payload, secret );
-      return "Bearer " + jwt_token;
-  }
-  
-  
-
+  /* Invio richiesta per restart ai portali dei vari enti */
   $("#restart").on('click',function(){
     var esito = confirm("Vuoi riavviare il sito ed applicare le nuove impostazioni?")
     if(esito){
@@ -103,14 +103,21 @@ $(document).ready(function() {
             }
               
           }
-      });
-      
-      
+      });  /* Fine chiamata ajax */ 
     }
-    
-  })
+  });
   
-  
+  $("#valore_yaml_conf").on("keyup",function(event){
+    $("#msg_errore_yaml").addClass('hide');
+    let yaml_str = $(this).val();
+    try {
+      let tipo_dato = YAML.parse($("#valore_yaml_conf").val()).constructor.name;
+      console.log(tipo_dato);
+    } catch (error) {
+      $("#msg_errore_yaml").removeClass('hide');
+      console.log("Problemi!");
+    }
+  });
   
   
   

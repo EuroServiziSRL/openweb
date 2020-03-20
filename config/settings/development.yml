@@ -1,0 +1,3 @@
+host_db_server: "127.0.0.1"
+username_db_server: "devel"
+password_db_server: "devel"
