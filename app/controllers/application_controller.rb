@@ -17,24 +17,29 @@ class ApplicationController < ActionController::Base
     #Se non trovo la tabella e sto cercando su un db diverso da quello principale
     #riconnetto active record sul db primario e poi ritorno alla action di prima
     def db_error_handler(exception)
+        logger.error exception.message
+        logger.error exception.backtrace.join("\n")
+        config   = Rails.configuration.database_configuration
+        host     = config[Rails.env]["host"]
+        database = config[Rails.env]["database"]
+        username = config[Rails.env]["username"]
+        password = config[Rails.env]["password"]
+        default_params = { :adapter  => "mysql2",
+          :host     => host,
+          :username => username,
+          :password => password,
+          :database => database }
         if !(exception.message =~(/Table '(\w+).(\w+)' doesn't exist/i)).nil?
             matchdata = exception.message.match(/Table '(\w+).(\w+)' doesn't exist/i)
             if !matchdata[1].blank? && matchdata[1] != 'openweb' 
-                config   = Rails.configuration.database_configuration
-                host     = config[Rails.env]["host"]
-                database = config[Rails.env]["database"]
-                username = config[Rails.env]["username"]
-                password = config[Rails.env]["password"]
-                default_params = { :adapter  => "mysql2",
-                               :host     => host,
-                               :username => username,
-                               :password => password,
-                               :database => database }
-                
                 ActiveRecord::Base.establish_connection(default_params)
                 redirect_to :controller => params['controller'], :action => params['action']
                 return
             end
+        elsif !(exception.message =~(/Unknown database/i)).nil?
+            ActiveRecord::Base.establish_connection(default_params)
+            flash[:error] = "Database non presente"
+            redirect_to index_admin_path
         else
             raise ActionController::RoutingError.new('Not Found')
         end
