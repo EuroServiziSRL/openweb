@@ -64,6 +64,11 @@
 										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.users_path  %>
 									</li>
 									<% end %>
+									<% if current_user.superadmin_role %>
+									<li>
+										<%= link_to '<i class="fa fa-refresh"></i> Aggiorna Clienti'.html_safe, AuthHub::Engine.routes.url_helpers.aggiorna_clienti_path, id: "agg_clienti"  %>
+									</li>
+									<% end %>
 									<% if current_user.admin_role %>
 										<li>
 										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
@@ -124,7 +129,7 @@
     
     <div class="clearfix"></div>    
   
-    <div class="wrapper">
+    <div class="wrapper" id="corpo_centrale">
         <div class="container">
 			<div class="row">
 			    <div id="contentColumn" class="col-lg-12 col-md-12">

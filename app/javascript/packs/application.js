@@ -63,7 +63,7 @@ $(document).ready(function() {
   
   /* Invio richiesta per restart ai portali dei vari enti */
   $("#restart").on('click',function(){
-    var esito = confirm("Vuoi riavviare il sito ed applicare le nuove impostazioni?")
+    let esito = confirm("Vuoi riavviare il sito ed applicare le nuove impostazioni?")
     if(esito){
       //recupero le info da un campo nascosto
       var dati_ente = $('#tag_dati_ente').data();
@@ -107,6 +107,42 @@ $(document).ready(function() {
     }
   });
   
+  /* Invio richiesta per aggiornare clienti */
+  $("#agg_clienti").on('click',function(event){
+    event.preventDefault();
+    let esito = confirm("Vuoi aggiornare la lista dei clienti?");
+    let url_assoluto = window.origin+"/auth_hub/aggiorna_clienti"
+    console.log("esito confirm");
+    console.log(esito);
+    if(esito){
+      Rails.ajax({
+        type: "GET", 
+        url: url_assoluto,
+        data: {},
+        success: function(response){
+          if(response['stato'] == 'ok'){
+            $("#corpo_centrale").prepend("<div id='msg_esito_agg_clienti' class='alert alert-success'>Aggiornamento clienti effettuato.</div>");
+          }else{
+            $("#corpo_centrale").prepend("<div id='msg_esito_agg_clienti' class='alert alert-danger'>Errore nell'aggiornamento!</div>");
+          }
+          setTimeout(function(){
+            $("#msg_esito_agg_clienti").remove();
+          }, 3000);
+        },
+        error: function(response){
+          $("#corpo_centrale").prepend("<div id='msg_esito_agg_clienti' class='alert alert-danger'>Errore nell'aggiornamento!</div>");
+          setTimeout(function(){
+            $("#msg_esito_agg_clienti").remove();
+          }, 3000);
+          console.log(response);
+          $("#msg_esito_agg_clienti").remove();
+        }
+      })
+    }
+  });
+
+
+  /* Controllo sintassi yaml con libreria yaml https://github.com/jeremyfa/yaml.js/ */
   $("#valore_yaml_conf").on("keyup",function(event){
     $("#msg_errore_yaml").addClass('hide');
     let yaml_str = $(this).val();
@@ -122,7 +158,7 @@ $(document).ready(function() {
   
   
   
-});
+}); //fine ready
 
 // BEGIN SVG WEATHER ICON
 if (typeof Skycons !== 'undefined'){
