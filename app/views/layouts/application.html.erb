@@ -74,6 +74,11 @@
 										<%= link_to '<i class="fa fa-users"></i> Utenti'.html_safe, AuthHub::Engine.routes.url_helpers.utenti_servizi_path  %>
 										</li>
 									<% end %>
+									<% if current_user.admin_role || current_user.admin_servizi %>
+										<li>
+										<%= link_to '<i class="fa fa-cogs"></i> Gestione Setup'.html_safe, AuthHub::Engine.routes.url_helpers.setups_path  %>
+										</li>
+									<% end %>
 									<% if current_user.respond_to?(:wiki_hd) && current_user.wiki_hd %>
 										<li>
 											<%= link_to '<i class="fa fa-newspaper-o"></i> Wiki HD'.html_safe, WikiHd::Engine.routes.url_helpers.index_hd_path  %>
