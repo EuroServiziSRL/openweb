@@ -19,8 +19,7 @@ gem 'addressable', '= 2.5.2'
 gem 'rack-cors', '= 1.0.2' , require: 'rack/cors'
 
 gem 'mysql2', '= 0.4.10'
-# Use Puma as the app server
-gem 'puma', '= 3.11.4'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '= 4.2.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -50,6 +49,8 @@ group :development, :test do
 end
 
 group :development do
+  # Use Puma as the app server
+  gem 'puma', '= 3.11.4'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   #gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

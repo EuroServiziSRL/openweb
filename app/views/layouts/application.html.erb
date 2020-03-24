@@ -14,8 +14,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Questo partial include i css degli engine, in base all'engine che sto usando va a prendere la view che importa i css -->
-    <%= render "shared/header_engine" %>
-    
+    <%= render "shared/header_engine_auth_hub" %>
+    <%= render "shared/header_engine_wiki_hd" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'filterrific-jquery'%>
     <%= javascript_pack_tag 'yaml.js' %>
