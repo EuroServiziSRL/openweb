@@ -33,13 +33,13 @@ class ApplicationController < ActionController::Base
             matchdata = exception.message.match(/Table '(\w+).(\w+)' doesn't exist/i)
             if !matchdata[1].blank? && matchdata[1] != 'openweb' 
                 ActiveRecord::Base.establish_connection(default_params)
-                redirect_to :controller => params['controller'], :action => params['action']
+                redirect_to auth_hub.dashboard_path
                 return
             end
         elsif !(exception.message =~(/Unknown database/i)).nil?
             ActiveRecord::Base.establish_connection(default_params)
             flash[:error] = "Database non presente"
-            redirect_to index_admin_path
+            redirect_to auth_hub.dashboard_path
         else
             raise ActionController::RoutingError.new('Not Found')
         end
@@ -72,7 +72,16 @@ class ApplicationController < ActionController::Base
       end
       #se session['ente_corrente'] è un hash devo caricare l'istanza di ente_gestito
       if session['ente_corrente'].is_a?(Hash)
-        session['ente_corrente'] = AuthHub::EnteGestito.find(session['ente_corrente']['id'])
+        begin
+          session['ente_corrente'] = AuthHub::EnteGestito.find(session['ente_corrente']['id'])
+        rescue ActiveRecord::RecordNotFound => exc
+          #metto l'ente principale
+          unless AuthHub::EnteGestito.ente_principale_da_user(@current_user.id).blank?
+            session['ente_corrente'] = AuthHub::EnteGestito.ente_principale_da_user(@current_user.id)[0] 
+          else
+            session['ente_corrente'] = nil
+          end
+        end    
       end
       @current_user
     end
