@@ -73,14 +73,14 @@ $(document).ready(function() {
       // });
       $.ajax
         ({
-          type: "GET",
+          type: "POST",
           url: "https://"+dati_ente['urlEnte']+"/portal/api/rstapp",
           dataType: 'json',
           crossDomain: true,
           xhrFields: {
             //withCredentials: true
           },
-          contentType: "application/json",
+          contentType: "text/plain",
           //async: false,
           // data: {   //questi sono i dati passati in get
           //   'name': 'test123456',
@@ -90,10 +90,10 @@ $(document).ready(function() {
           //caso richiesta in preflight mode
           beforeSend: function (xhr){ 
               xhr.setRequestHeader('Authorization', jwt_token(dati_ente['nomeDb']));
-              xhr.setRequestHeader("Access-Control-Allow-Origin",'*');
-              xhr.setRequestHeader("Access-Control-Allow-Methods","POST, GET, OPTIONS, PUT, DELETE");
-              xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
-              xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type");
+              // xhr.setRequestHeader("Access-Control-Allow-Origin",'*');
+              // xhr.setRequestHeader("Access-Control-Allow-Methods","POST, GET, OPTIONS, PUT, DELETE");
+              // xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
+              //xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type");
           },
           success: function (res){
             if(res['esito'] == 'ok'){
