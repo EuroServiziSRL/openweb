@@ -74,7 +74,7 @@ $(document).ready(function() {
       $.ajax
         ({
           type: "GET",
-          url: dati_ente['urlEnte']+"/portal/api/rstapp",
+          url: "https://"+dati_ente['urlEnte']+"/portal/api/rstapp",
           dataType: 'json',
           crossDomain: true,
           xhrFields: {
