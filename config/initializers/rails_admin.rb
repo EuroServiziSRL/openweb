@@ -93,7 +93,16 @@ RailsAdmin.config do |config|
   config.excluded_models << "AuthHub::OauthAccessToken"
   config.excluded_models << "AuthHub::OauthApplication"
   
-  
+  config.model 'AuthHub::MasterSetup' do
+    label "Setup" 
+    label_plural "Setups"
+    list do
+        exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS
+    end
+    object_label_method do
+        :ID
+    end
+  end
   config.model 'AuthHub::ClientiApplicazione' do
     label "Applicazione" 
     label_plural "Applicazioni"
