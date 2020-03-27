@@ -22,6 +22,8 @@ module Openweb
     config.i18n.default_locale = :it
 
     config.time_zone = "Rome"
+    #Imposta i corretti valori di created_at su activerecord
+    config.active_record.default_timezone = :local 
 
     WillPaginate.per_page = 15
 

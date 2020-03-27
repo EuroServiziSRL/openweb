@@ -82,8 +82,8 @@ gem 'filterrific', '= 5.2.0'
 gem 'will_paginate', '= 3.1.6'
 gem 'email_verifier', '= 0.1.0' #verifica mail in fase di registrazione
 
-#gem 'react-rails', '= 2.6.0'
-
+gem 'doorkeeper', '= 5.3.1'
+gem 'doorkeeper-jwt', '= 0.2.1'
 
 gem 'auth_hub', path: 'engines/auth_hub'
 gem 'wiki_hd', path: 'engines/wiki_hd'
