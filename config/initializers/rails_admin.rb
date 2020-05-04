@@ -92,6 +92,9 @@ RailsAdmin.config do |config|
   config.excluded_models << "AuthHub::OauthAccessGrant"
   config.excluded_models << "AuthHub::OauthAccessToken"
   config.excluded_models << "AuthHub::OauthApplication"
+  config.excluded_models << "AuthHub::OldPasswords"
+
+  config.excluded_models << "WikiHd::Version"
   
   config.model 'AuthHub::MasterSetup' do
     label "Setup" 

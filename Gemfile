@@ -14,7 +14,7 @@ gem 'config', '= 2.0.0'
 gem 'sass-rails', '= 5.0.7'
 gem 'bootstrap-sass', '= 3.3.7'
 gem 'autoprefixer-rails', '= 9.6.1'
-gem 'addressable', '= 2.5.2'
+gem 'addressable', '~> 2.6'
 
 gem 'rack-cors', '= 1.0.2' , require: 'rack/cors'
 
@@ -84,6 +84,8 @@ gem 'email_verifier', '= 0.1.0' #verifica mail in fase di registrazione
 
 gem 'doorkeeper', '= 5.3.1'
 gem 'doorkeeper-jwt', '= 0.2.1'
+gem 'jwe'
+gem 'carrierwave', '= 2.1.0'
 
 gem 'auth_hub', path: 'engines/auth_hub'
 gem 'wiki_hd', path: 'engines/wiki_hd'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_121137) do
+ActiveRecord::Schema.define(version: 2020_04_17_143214) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,29 @@ ActiveRecord::Schema.define(version: 2020_03_17_121137) do
     t.bigint "clienti_cliente_id"
     t.index ["clienti_cliente_id"], name: "index_auth_hub_enti_gestiti_on_clienti_cliente_id"
     t.index ["user_id"], name: "index_auth_hub_enti_gestiti_on_user_id"
+  end
+
+  create_table "auth_hub_info_login_cliente", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "key_path", null: false
+    t.string "cert_path", null: false
+    t.boolean "app_ext"
+    t.string "secret", null: false
+    t.string "client", null: false
+    t.string "url_app_ext"
+    t.string "url_ass_cons_ext"
+    t.string "issuer", null: false
+    t.string "org_name", null: false
+    t.string "org_display_name", null: false
+    t.string "org_url", null: false
+    t.boolean "spid"
+    t.boolean "spid_pre_prod"
+    t.boolean "cie"
+    t.boolean "cie_pre_prod"
+    t.boolean "eidas"
+    t.boolean "eidas_pre_prod"
+    t.boolean "aggregato"
+    t.bigint "clienti_cliente_id"
+    t.index ["clienti_cliente_id"], name: "index_auth_hub_info_login_cliente_on_clienti_cliente_id"
   end
 
   create_table "auth_hub_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
