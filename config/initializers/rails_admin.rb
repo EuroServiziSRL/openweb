@@ -238,7 +238,19 @@ RailsAdmin.config do |config|
 #     label "Access Grant Oauth" 
 #     label_plural "Access Grants Oauth"
 #   end
-  
+  config.model 'AuthHub::InfoLoginCliente' do
+    label "Info Login Clienti" 
+    label_plural "Info Login Clienti"
+    list do
+      exclude_fields :stato_metadata
+    end
+    show do
+        exclude_fields :stato_metadata
+    end
+    edit do
+        exclude_fields :stato_metadata
+    end
+  end
   
   config.parent_controller = 'ApplicationController'
   

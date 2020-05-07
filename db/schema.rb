@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(version: 2020_04_17_143214) do
     t.boolean "eidas"
     t.boolean "eidas_pre_prod"
     t.boolean "aggregato"
+    t.string "cod_ipa_aggregato", null: false
+    t.string "p_iva_aggregato", null: false
+    t.string "cf_aggregato", null: false
+    t.string "stato_metadata", null: false
     t.bigint "clienti_cliente_id"
     t.index ["clienti_cliente_id"], name: "index_auth_hub_info_login_cliente_on_clienti_cliente_id"
   end

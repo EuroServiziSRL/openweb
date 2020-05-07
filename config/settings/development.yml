@@ -1,3 +1,5 @@
 host_db_server: "127.0.0.1"
 username_db_server: "devel"
 password_db_server: "devel"
+path_pkey_es: '/home/fabiano/soluzionipa/certs/soluzionipa.key'
+path_key_jwe: '/home/fabiano/soluzionipa/certs/soluzionipa.key'
