@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 2020_04_17_143214) do
   end
 
   create_table "auth_hub_info_login_cliente", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "org_name", null: false
+    t.string "org_display_name", null: false
+    t.string "org_url", null: false
     t.string "key_path", null: false
     t.string "cert_path", null: false
     t.boolean "app_ext"
@@ -57,9 +60,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_143214) do
     t.string "url_app_ext"
     t.string "url_ass_cons_ext"
     t.string "issuer", null: false
-    t.string "org_name", null: false
-    t.string "org_display_name", null: false
-    t.string "org_url", null: false
     t.boolean "spid"
     t.boolean "spid_pre_prod"
     t.boolean "cie"
