@@ -86,6 +86,8 @@ gem 'doorkeeper', '= 5.3.1'
 gem 'doorkeeper-jwt', '= 0.2.1'
 gem 'jwe'
 gem 'carrierwave', '= 2.1.0'
+gem 'rubyzip'
+gem 'httparty'
 
 gem 'auth_hub', path: 'engines/auth_hub'
 gem 'wiki_hd', path: 'engines/wiki_hd'

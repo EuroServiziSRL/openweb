@@ -52,13 +52,14 @@ ActiveRecord::Schema.define(version: 2020_04_17_143214) do
     t.string "org_name", null: false
     t.string "org_display_name", null: false
     t.string "org_url", null: false
-    t.string "key_path", null: false
-    t.string "cert_path", null: false
+    t.string "key_path"
+    t.string "cert_path"
     t.boolean "app_ext"
     t.string "secret", null: false
     t.string "client", null: false
     t.string "url_app_ext"
     t.string "url_ass_cons_ext"
+    t.string "url_metadata_ext"
     t.string "issuer", null: false
     t.boolean "spid"
     t.boolean "spid_pre_prod"
