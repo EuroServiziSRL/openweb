@@ -3,3 +3,10 @@ username_db_server: "devel"
 password_db_server: "devel"
 path_pkey_es: '/home/fabiano/soluzionipa/certs/soluzionipa.key'
 path_key_jwe: '/home/fabiano/soluzionipa/certs/soluzionipa.key'
+app_auth_url: "http://localhost:3000"
+hash_aggregatore:
+  entity_id: 'https://auth.soluzionipa.it'
+  soggetto_aggregatore: 'Dedagroup Public Services s.r.l.'
+  piva_aggregatore: '01727860221'
+  cipa_aggregatore: ""
+  cf_aggregatore: '03188950103'
