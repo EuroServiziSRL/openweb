@@ -1,3 +1,5 @@
+mail_admin_to: 'assistenza@soluzionipa.it'
+mail_admin_from: 'start@soluzionipa.it'
 host_db_server: "127.0.0.1"
 username_db_server: "devel"
 password_db_server: "devel"
@@ -10,3 +12,5 @@ hash_aggregatore:
   piva_aggregatore: '01727860221'
   cipa_aggregatore: ""
   cf_aggregatore: '03188950103'
+app_oauth2_url: "http://localhost:3000"
+mail_spid_agid: 'fabiano.pavan@soluzionipa.it'

@@ -23,6 +23,7 @@ Rails.start();
 /* importo application degli engines */
 import '../../../engines/wiki_hd/app/assets/javascripts/packs/application_wikihd'
 
+import '../../../engines/auth_hub/app/assets/javascripts/packs/application_authhub'
 
 var jwt = require('jsonwebtoken');
 const uuidv1 = require('uuid/v1');

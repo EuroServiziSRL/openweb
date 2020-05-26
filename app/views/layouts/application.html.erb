@@ -123,7 +123,7 @@
 				  <div class="navigation">
 				    <ul class="nav navbar-nav">
 				    	<% session[:link_navigazione_utente].each do |link| %>	
-				    		<li><a href="<%= link['url'] %>"><%= link['titolo'] %></a></li>
+				    		<li><a id="<%= link['id'] %>" href="<%= link['url'] %>"><%= link['titolo'] %></a></li>
 				    	<% end %>
 				    </ul>
 				  </div>
