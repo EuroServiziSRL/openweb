@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.4.1"
+ruby "2.6.3"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -9,14 +9,14 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '= 5.2.0'
+gem 'rails', '= 5.2.4.3'
 gem 'config', '= 2.0.0'
 gem 'sass-rails', '= 5.0.7'
 gem 'bootstrap-sass', '= 3.3.7'
 gem 'autoprefixer-rails', '= 9.6.1'
 gem 'addressable', '~> 2.6'
 
-gem 'rack-cors', '= 1.0.2' , require: 'rack/cors'
+gem 'rack-cors', '= 1.1.1' , require: 'rack/cors'
 
 gem 'mysql2', '= 0.4.10'
 
@@ -26,7 +26,7 @@ gem 'uglifier', '= 4.2.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '= 4.2.2'
+#gem 'coffee-rails', '= 4.2.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '= 5.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -43,8 +43,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  #gem 'capybara', '~> 2.13'
+  #gem 'selenium-webdriver'
   #gem 'derailed_benchmarks' #per vedere consumo di memoria
 end
 
@@ -58,10 +58,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 
 gem 'multiverse', '= 0.2.0'   #permette di usare n database
 #gem 'rmre','= 0.0.9'      #crea i models partendo da un database 
@@ -79,15 +75,16 @@ gem 'material_design_icons_rails', '= 1.0.0'
 gem 'cancancan', '= 2.2.0'
 gem 'rails_admin','= 1.3.0'#, git: 'https://github.com/sferik/rails_admin.git'
 gem 'filterrific', '= 5.2.0'
-gem 'will_paginate', '= 3.1.6'
+gem 'will_paginate', '= 3.3.0'
 gem 'email_verifier', '= 0.1.0' #verifica mail in fase di registrazione
 
 gem 'doorkeeper', '= 5.3.1'
+gem 'jwt', '= 1.5.6'
 gem 'doorkeeper-jwt', '= 0.2.1'
-gem 'jwe'
+gem 'jwe', '= 0.4.0'
 gem 'carrierwave', '= 2.1.0'
-gem 'rubyzip'
-gem 'httparty'
+gem 'rubyzip', '= 2.3.0'
+gem 'httparty', '= 0.18.0'
 
 gem 'auth_hub', path: 'engines/auth_hub'
 gem 'wiki_hd', path: 'engines/wiki_hd'
