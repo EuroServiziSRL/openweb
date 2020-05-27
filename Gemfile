@@ -50,7 +50,7 @@ end
 
 group :development do
   # Use Puma as the app server
-  gem 'puma', '= 3.11.4'
+  gem 'puma', '= 4.3.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   #gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -73,7 +73,7 @@ gem 'material_design_icons_rails', '= 1.0.0'
 #gem 'weather-icons-for-rails'
 
 gem 'cancancan', '= 2.2.0'
-gem 'rails_admin','= 1.3.0'#, git: 'https://github.com/sferik/rails_admin.git'
+gem 'rails_admin','= 1.4.3'#, git: 'https://github.com/sferik/rails_admin.git'
 gem 'filterrific', '= 5.2.0'
 gem 'will_paginate', '= 3.3.0'
 gem 'email_verifier', '= 0.1.0' #verifica mail in fase di registrazione

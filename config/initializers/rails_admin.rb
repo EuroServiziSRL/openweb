@@ -85,6 +85,7 @@ RailsAdmin.config do |config|
   config.excluded_models << "AuthHub::ClientiApplicazioneRefClientiOrdine"
   config.excluded_models << "AuthHub::ClientiAllegato"
   config.excluded_models << "AuthHub::ClientiOrdine"
+  config.excluded_models << "AuthHub::ApplicazioniEnte"
   config.excluded_models << 'AuthHub::Setup'
   #tolti per non avere problemi su migration..non servono..
   config.excluded_models << 'ActiveStorage::Blob'
