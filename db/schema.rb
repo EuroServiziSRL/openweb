@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_143214) do
+ActiveRecord::Schema.define(version: 2020_10_12_152225) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_04_17_143214) do
     t.string "cf_aggregato", null: false
     t.string "stato_metadata", null: false
     t.bigint "clienti_cliente_id"
+    t.string "email_aggregato", null: false
+    t.string "telefono_aggregato"
     t.index ["clienti_cliente_id"], name: "index_auth_hub_info_login_cliente_on_clienti_cliente_id"
   end
 
