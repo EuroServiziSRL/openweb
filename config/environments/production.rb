@@ -93,14 +93,19 @@ Rails.application.configure do
   #non faccio aggiornamenti in production
   #config.webpacker.check_yarn_integrity = false
   
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'soluzionipa.it',
-    user_name:            'sviluppo@soluzionipa.it',
-    password:             'sviluppopa',
-    authentication:       'plain',
-    enable_starttls_auto: true }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'soluzionipa.it',
+  #   user_name:            'sviluppo@soluzionipa.it',
+  #   password:             'sviluppopa',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true }
+
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'noreply@soluzionipa.it'}
   
 end
