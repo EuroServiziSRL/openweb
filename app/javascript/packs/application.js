@@ -142,6 +142,40 @@ $(document).ready(function() {
     }
   });
 
+    /* Invio metadata ad AGID tramite mail */
+    $("#metadata_agid").on('click',function(event){
+      event.preventDefault();
+      let esito = confirm("Vuoi inviare i metadati ad AGID?");
+      let url_assoluto = window.origin+"/auth_hub/invia_metadata_agid"
+      console.log("esito confirm");
+      console.log(esito);
+      if(esito){
+        Rails.ajax({
+          type: "GET", 
+          url: url_assoluto,
+          data: {},
+          success: function(response){
+            if(response['stato'] == 'ok'){
+              $("#corpo_centrale").prepend("<div id='msg_esito_invio_metadati' class='alert alert-success'>Invio metadati effettuato.</div>");
+            }else{
+              $("#corpo_centrale").prepend("<div id='msg_esito_invio_metadati' class='alert alert-danger'>Errore nell'invio dei metadati!</div>");
+            }
+            setTimeout(function(){
+              $("#msg_esito_invio_metadati").remove();
+            }, 3000);
+          },
+          error: function(response){
+            $("#corpo_centrale").prepend("<div id='msg_esito_invio_metadati' class='alert alert-danger'>Errore nell'invio dei metadati!</div>");
+            setTimeout(function(){
+              $("#msg_esito_invio_metadati").remove();
+            }, 3000);
+            console.log(response);
+            $("#msg_esito_invio_metadati").remove();
+          }
+        })
+      }
+    });
+
 
   /* Controllo sintassi yaml con libreria yaml https://github.com/jeremyfa/yaml.js/ */
   $("#valore_yaml_conf").on("keyup",function(event){
