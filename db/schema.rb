@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_152225) do
+ActiveRecord::Schema.define(version: 2021_01_20_122010) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2020_10_12_152225) do
     t.bigint "clienti_cliente_id"
     t.string "email_aggregato", null: false
     t.string "telefono_aggregato"
+    t.string "index_consumer"
+    t.string "campi_richiesti"
     t.index ["clienti_cliente_id"], name: "index_auth_hub_info_login_cliente_on_clienti_cliente_id"
   end
 
@@ -168,6 +170,18 @@ ActiveRecord::Schema.define(version: 2020_10_12_152225) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["soluzione_id"], name: "index_wiki_hd_allegati_on_soluzione_id"
+  end
+
+  create_table "wiki_hd_segnalazioni", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+    t.string "nome_cognome"
+    t.string "email"
+    t.string "stato"
+    t.text "testo_segnalazione"
+    t.text "testo_risposta"
+    t.bigint "auth_hub_clienti_cliente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auth_hub_clienti_cliente_id"], name: "index_wiki_hd_segnalazioni_on_auth_hub_clienti_cliente_id"
   end
 
   create_table "wiki_hd_soluzioni", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
