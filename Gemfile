@@ -24,6 +24,7 @@ gem 'mysql2', '= 0.5.3'
 gem 'uglifier', '= 4.2.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'execjs', '= 2.7.0'
 
 # Use CoffeeScript for .coffee assets and views
 #gem 'coffee-rails', '= 4.2.2'

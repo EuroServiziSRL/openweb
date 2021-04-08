@@ -381,6 +381,7 @@ DEPENDENCIES
   doorkeeper (= 5.3.1)
   doorkeeper-jwt (= 0.2.1)
   email_verifier (= 0.1.0)
+  execjs (= 2.7.0)
   filterrific (= 5.2.0)
   font-awesome-sass (= 4.7.0)
   font-ionicons-rails (= 2.0.1.5)
