@@ -16,6 +16,7 @@ gem 'rails', '5.2.4.3'
 
 gem 'railties', '5.2.4.3'
 
+gem 'nokogiri', '1.10.9'
 gem 'config', '= 2.0.0'
 gem 'sass-rails', '= 5.0.7'
 gem 'bootstrap-sass', '= 3.3.7'
