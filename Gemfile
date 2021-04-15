@@ -24,7 +24,7 @@ gem 'addressable', '~> 2.6'
 
 gem 'rack-cors', '= 1.1.1' , require: 'rack/cors'
 
-gem 'mysql2', '= 0.5.3'
+gem 'mysql2', '= 0.4.10'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '= 4.2.0'

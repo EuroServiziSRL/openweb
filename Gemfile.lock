@@ -211,7 +211,7 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
       railties (>= 4.2)
-    mysql2 (0.5.3)
+    mysql2 (0.4.10)
     nested_form (0.3.2)
     nio4r (2.5.7)
     nokogiri (1.11.3)
@@ -376,7 +376,7 @@ DEPENDENCIES
   listen
   material_design_icons_rails (= 1.0.0)
   multiverse (= 0.2.0)
-  mysql2 (= 0.5.3)
+  mysql2 (= 0.4.10)
   omniauth
   omniauth-azure-oauth2
   puma (= 4.3.5)
