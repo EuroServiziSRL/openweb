@@ -123,6 +123,25 @@ RailsAdmin.config do |config|
   config.model 'AuthHub::ClientiInstallazione' do
     label "Installazione" 
     label_plural "Installazioni"
+    field :id do
+      label 'Id'
+    end
+    field :CLIENTE do
+      label 'Cliente'
+    end
+    field :SERVER do
+      label 'Server'
+    end
+    field :SPIDERURL do
+      label 'Url Portale Spider'
+    end
+    field :HIPPO do
+      label 'Url Portale Hippo'
+    end
+    field :SPIDERDB do
+      label 'Nome DB'
+    end
+    include_all_fields
     list do
         exclude_fields :CR_DATE, :MOD_DATE, :CR_USER_ID, :MOD_USER_ID,:PERMS,:ID_APPLICAZIONI,:CODICEFISCALE,:PARTITAIVA,:ID_ANAGRAFICA,:BELFIORE
     end
@@ -245,14 +264,107 @@ RailsAdmin.config do |config|
   config.model 'AuthHub::InfoLoginCliente' do
     label "Info Login Clienti" 
     label_plural "Info Login Clienti"
+
+    field :id do
+      label 'Id'
+    end
+    field :org_name do
+      label 'Nome Cliente'
+    end
+    field :org_display_name do
+      label 'Nome Cliente Esteso'
+    end
+    field :org_url do
+      label 'Url Dominio'
+    end
+    field :client do
+      label 'Client'
+    end
+    field :secret do
+      label 'Secret'
+    end
+    field :cod_ipa_aggregato do
+      label 'Cod Ipa'
+    end
+    field :belfiore_aggregato do
+      label 'Cod Belfiore Ente'
+    end
+    field :issuer do
+      label 'EntityID'
+    end
+    field :app_ext do
+      label 'Portale Esterno'
+    end
+    field :url_app_ext do
+      label 'Url Login Esterno Spid/eIDAS'
+    end
+    field :url_ass_cons_ext do
+      label 'Url Ricezione SAML Esterna Spid/eIDAS'
+    end
+    field :url_metadata_ext do
+      label 'Url Metadata Spid/eIDAS Esterno'
+    end
+    field :url_ass_cons_ext_cie do
+      label 'Url Ricezione SAML Esterna CIE'
+    end
+    field :url_metadata_ext_cie do
+        label 'Url Metadata CIE Esterno'
+    end
+    field :key_path do
+      label 'Chiave Priv Cliente'
+    end
+    field :cert_path do
+        label 'Cert Cliente'
+    end
+    field :spid do
+      label 'Spid Attivo'
+    end
+    field :spid_pre_prod do
+        label 'Spid Pre Prod Attivo'
+    end
+    field :cie do
+        label 'CIE Attivo'
+    end
+    field :cie_pre_prod do
+        label 'CIE Pre Prod Attivo'
+    end
+    field :eidas do
+        label 'eIDAS Attivo'
+    end
+    field :eidas_pre_prod do
+        label 'eIDAS Pre Prod Attivo'
+    end
+    field :aggregato do
+        label 'Aggregato'
+    end 
+    field :p_iva_aggregato do
+        label 'P. IVA Ente'
+    end
+    field :cf_aggregato do
+        label 'CF Ente'
+    end
+    field :email_aggregato do
+        label 'E-Mail Aggregato'
+    end
+    field :telefono_aggregato do
+        label 'Telefono Ente'
+    end
+    field :index_consumer do
+        label 'Index Servizio'
+    end
+    field :campi_richiesti do
+        label 'Campi Richiesti'
+    end
+    include_all_fields #include anche il clienti_cliente_id per collegamenti con clienti
     list do
-      exclude_fields :stato_metadata
+      exclude_fields :stato_metadata, :org_display_name, :secret, :url_app_ext, :url_ass_cons_ext, :url_metadata_ext, :url_ass_cons_ext_cie, :url_metadata_ext_cie, :key_path, :cert_path, :issuer, :spid_pre_prod
     end
     show do
         exclude_fields :stato_metadata
     end
     edit do
-        exclude_fields :stato_metadata
+        exclude_fields :id, :stato_metadata
+        include_fields :clienti_cliente_id  
     end
   end
   
