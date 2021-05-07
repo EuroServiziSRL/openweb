@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_122010) do
+ActiveRecord::Schema.define(version: 2021_04_13_152104) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_01_20_122010) do
     t.string "url_app_ext"
     t.string "url_ass_cons_ext"
     t.string "url_metadata_ext"
+    t.string "url_ass_cons_ext_cie"
+    t.string "url_metadata_ext_cie"
     t.string "issuer", null: false
     t.boolean "spid"
     t.boolean "spid_pre_prod"
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_122010) do
     t.string "telefono_aggregato"
     t.string "index_consumer"
     t.string "campi_richiesti"
+    t.string "belfiore_aggregato", null: false
     t.index ["clienti_cliente_id"], name: "index_auth_hub_info_login_cliente_on_clienti_cliente_id"
   end
 
