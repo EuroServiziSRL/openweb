@@ -367,6 +367,13 @@ RailsAdmin.config do |config|
         include_fields :clienti_cliente_id  
     end
   end
+
+  config.model 'AuthHub::IoService' do
+    label "Servizi IO" 
+    label_plural "Servizi IO"
+  end
+
+  
   
   config.parent_controller = 'ApplicationController'
   
